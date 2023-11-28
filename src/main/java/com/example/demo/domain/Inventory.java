@@ -5,6 +5,12 @@ public class Inventory {
     
     private ArrayList<Item> inventory;
 
-    public 
+    public boolean collectWater(){
+        
+    }
+
+    public boolean pourWater(){
+        
+    }
 
 }
