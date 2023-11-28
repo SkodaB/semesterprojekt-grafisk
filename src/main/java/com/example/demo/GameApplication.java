@@ -15,8 +15,8 @@ public class GameApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("World Of water!");
         stage.setScene(scene);
-        Image pic1 = new Image("/ENTRY PIC.png");
-        stage.getIcons().add(pic1);
+        //Image pic1 = new Image("src\\main\\resources\\com\\example\\demo\\ENTRY PIC.png");
+        //stage.getIcons().add(pic1);
         stage.show();
     }
 
