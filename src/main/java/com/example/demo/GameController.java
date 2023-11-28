@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -13,7 +14,7 @@ public class GameController {
     }
 
     @FXML
-    public void toEntry(){
+    public void toEntry(ActionEvent event){
         try{
             GameApplication.loadScene("hello-view.fxml");
         }catch(Exception e){
@@ -21,7 +22,7 @@ public class GameController {
         }
     }
     @FXML
-    public void toSouthCave(){
+    public void toSouthCave(ActionEvent event){
         try{
             GameApplication.loadScene("southcave.fxml");
         }catch(Exception e){
