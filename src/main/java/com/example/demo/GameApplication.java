@@ -31,8 +31,8 @@ public class GameApplication extends Application {
 
     public static void loadScene(String fxml) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load(),320,240);
-        theStage.setTitle("Worlder of water!");
+        Scene scene = new Scene(fxmlLoader.load());
+        theStage.setTitle("World of water!");
         theStage.setScene(scene);
         theStage.show();
     }
