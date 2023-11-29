@@ -11,6 +11,8 @@ public class Player {
 
     private double points;
 
+    private double water;
+
     public void addPoints(double amount){
         this.points += amount;
     }
@@ -21,5 +23,17 @@ public class Player {
 
     public void resetPoints(){
         this.points = 0;
+    }
+
+    public void addWater(double amount){
+        this.water += amount;
+    }
+
+    public void subtractWater(double amount){
+        this.water -= amount;
+    }
+
+    public void resetWater(double amount){
+        this.water = 0;
     }
 }

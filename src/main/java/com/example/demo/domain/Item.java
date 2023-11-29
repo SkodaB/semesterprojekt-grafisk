@@ -20,4 +20,8 @@ public abstract class Item {
     public void setProgress(boolean isFull,boolean roughFiltered, boolean fineFiltered, boolean coalFiltered){
         this.progress = new boolean[]{isFull,roughFiltered,fineFiltered,coalFiltered};
     }
+
+    public String getName(){
+        return name;
+    }
 }

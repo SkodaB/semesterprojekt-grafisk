@@ -1,23 +1,28 @@
 package com.example.demo.domain;
-import java.util.Map;
-import java.util.HashMap;
 
-class Context {
+public class Context {
   Space current;
   boolean done = false;
   Player player;
   Shop shop;
   Inventory inventory;
 
-  Context(Space space, Player playerIn, Shop shopIn, Inventory inventoryIn) {
-    current = space;
+  Context(Space node, Player playerIn, Shop shopIn, Inventory inventoryIn) {
+    current = node;
     player = playerIn;
     shop = shopIn;
     inventory = inventoryIn;
-    this.spaceNames.put(space.getName(),space);
+    //initialize items in inventory
+    inventory.addItem(new Hands());
+    //initialize items in shop
+    shop.addItem(new Wheelbarrow());
+    shop.addItem(new Wheelbarrow());
+    shop.addItem(new Bucket());
+    shop.addItem(new Bucket());
+    shop.addItem(new Bucket());
+    shop.addItem(new Bucket());
+    shop.addItem(new Firetruck());
   }
-  
-  public Map<String,Space> spaceNames = new HashMap<>();
 
   public Inventory getInventory() {
     return inventory;
@@ -35,6 +40,17 @@ class Context {
     return shop;
   }
 
+  public boolean transition(String direction) {
+    Space next = current.followEdge(direction);
+    if (next == null) {
+      return false;
+    } else {
+      //current.goodbye();
+      current = next;
+      return true;
+      //current.welcome();
+    }
+  }
 
   public void makeDone() {
     done = true;
@@ -45,11 +61,5 @@ class Context {
   }
   public void setDone(boolean done){
     this.done = done;
-  }
-
-  public void transition(String name){
-    if(isNext()){
-        
-    }
   }
 }
