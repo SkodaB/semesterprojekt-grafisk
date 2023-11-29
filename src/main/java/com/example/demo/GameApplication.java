@@ -20,7 +20,7 @@ public class GameApplication extends Application {
         //stage.setTitle("World Of water!");
         //stage.setScene(scene);
         loadScene("hello-view.fxml");
-        //Image pic1 = new Image("src\\main\\resources\\com\\example\\demo\\ENTRY PIC.png");
+        //Image pic1 = new Image();
         //stage.getIcons().add(pic1);
         //stage.show();
     }
