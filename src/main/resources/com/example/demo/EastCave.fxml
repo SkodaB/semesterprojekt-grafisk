@@ -8,7 +8,7 @@
    <effect>
       <ImageInput>
          <source>
-            <Image url="South-Cave.png" />
+            <Image url="file:/C:/Users/olive/Documents/GitHub/semesterprojekt-grafisk/src/main/resources/com/example/demo/East-Cave%20PIC.png" />
          </source>
       </ImageInput>
    </effect>
