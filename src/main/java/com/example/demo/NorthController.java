@@ -7,10 +7,10 @@ import javafx.fxml.FXML;
 
 public class NorthController  {
     @FXML private ImageView northImageView;
-    @FXML Button myButton;
-    @FXML private Image nCavePic = new Image ("northcave.png");
+    @FXML Button goSouth;
+    @FXML Image sCavePic = new Image (getClass().getResourceAsStream("South-Cave.png"));
     public void displayImage(){
-        northImageView.setImage(nCavePic);
+        northImageView.setImage(sCavePic);
     }
 
 

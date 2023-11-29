@@ -13,13 +13,13 @@ public class Inventory {
 
     private ArrayList<Item> inventory;
 
-    public boolean collectWater(){
-        
-    }
-
-    public boolean pourWater(){
-        
-    }
+//    public boolean collectWater(){
+//
+//    }
+//
+//    public boolean pourWater(){
+//
+//    }
 
     public boolean removeItem(Item item){
         if(containsItem(inventory, item)){

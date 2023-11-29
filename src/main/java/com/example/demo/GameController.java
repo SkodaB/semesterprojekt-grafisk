@@ -24,7 +24,7 @@ public class GameController {
     @FXML
     public void toSouthCave(ActionEvent event){
         try{
-            GameApplication.loadScene("southcave.fxml");
+            GameApplication.loadScene("northcave.fxml");
         }catch(Exception e){
             System.out.println(e);
         } 
