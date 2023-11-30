@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -13,19 +14,44 @@ public class GameController {
     }
 
     @FXML
-    public void toEntry(){
-        try{
+    public void toEntry() {
+        try {
             GameApplication.loadScene("hello-view.fxml");
-        }catch(Exception e){
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void toSouthCave(ActionEvent event) {
+        try {
+            GameApplication.loadScene("southcave.fxml");
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
     @FXML
-    public void toSouthCave(){
-        try{
-            GameApplication.loadScene("southcave.fxml");
-        }catch(Exception e){
+    public void toNorthCave(ActionEvent event) {
+        try {
+            GameApplication.loadScene("NorthCave.fxml");
+        } catch (Exception e) {
             System.out.println(e);
-        } 
+        }
+    }
+    @FXML
+    public void toEastCave(ActionEvent event) {
+        try {
+            GameApplication.loadScene("EastCave.fxml");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    @FXML
+    public void toWestCave(ActionEvent event) {
+        try {
+            GameApplication.loadScene("WestCave.fxml");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

@@ -20,7 +20,7 @@ public class GameApplication extends Application {
         //stage.setTitle("World Of water!");
         //stage.setScene(scene);
         loadScene("hello-view.fxml");
-        //Image pic1 = new Image("src\\main\\resources\\com\\example\\demo\\ENTRY PIC.png");
+        //Image pic1 = new Image("src\\main\\resources\\com\\example\\demo\\Entry.png");
         //stage.getIcons().add(pic1);
         //stage.show();
     }
@@ -31,7 +31,7 @@ public class GameApplication extends Application {
 
     public static void loadScene(String fxml) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load(),940,960);
+        Scene scene = new Scene(fxmlLoader.load(),700,700);
         theStage.setTitle("Worlder of water!");
         theStage.setScene(scene);
         theStage.show();

@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
-   <effect>
-      <ImageInput>
-         <source>
-            <Image url="North-Cave%20PIC.png" />
-         </source>
-      </ImageInput>
-   </effect>
-</Pane>
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
+   <children>
+      <Label prefHeight="700.0" prefWidth="700.0" rotate="180.0" text="Label">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="@North-Cave.png" />
+               </source>
+            </ImageInput>
+         </effect>
+      </Label>
+      <Label fx:id="welcomeText" layoutX="327.0" layoutY="14.0" text="North Cave" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="38.0" />
+         </font></Label>
+      <Button layoutX="282.0" layoutY="612.0" onAction="#toSouthCave" opacity="0.0" prefHeight="88.0" prefWidth="150.0" text="South Cave" />
+      <Button layoutY="310.0" onAction="#toWestCave" opacity="0.0" prefHeight="101.0" prefWidth="101.0" text="West Cave" />
+      <Button layoutX="599.0" layoutY="310.0" onAction="#toEastCave" opacity="0.0" prefHeight="101.0" prefWidth="101.0" text="East Cave" />
+   </children>
+</AnchorPane>

@@ -6,19 +6,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="407.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
-      <Label fx:id="welcomeText" layoutX="178.0" layoutY="32.0" prefHeight="38.0" prefWidth="186.0" text="World Of Water" textAlignment="CENTER">
+      <Label prefHeight="700.0" prefWidth="700.0" text="Label">
+         <effect>
+            <ImageInput>
+               <source>
+                  <Image url="file:/C:/Users/olive/Documents/GitHub/semesterprojekt-grafisk/src/main/resources/com/example/demo/Entry.png" />
+               </source>
+            </ImageInput>
+         </effect>
+      </Label>
+      <Label fx:id="welcomeText" layoutX="219.0" layoutY="130.0" text="World Of Water" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="26.0" />
+            <Font size="38.0" />
          </font></Label>
-      <Button layoutX="275.0" layoutY="300.0" onAction="#toSouthCave" prefHeight="250.0" prefWidth="150.0" text="Start Game" />
+      <Button layoutX="259.0" layoutY="312.0" onAction="#toSouthCave" opacity="0.0" prefHeight="150.0" prefWidth="184.0" text="Start Game" />
    </children>
-   <effect>
-      <ImageInput>
-         <source>
-            <Image url="file:/C:/Users/olive/Documents/GitHub/semesterprojekt-grafisk/src/main/resources/com/example/demo/ENTRY%20PIC.png" />
-         </source>
-      </ImageInput>
-   </effect>
 </AnchorPane>
