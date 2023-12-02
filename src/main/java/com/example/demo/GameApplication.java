@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.example.demo.domain.Main;
+
 public class GameApplication extends Application {
 
     public static Stage theStage;
@@ -19,10 +21,7 @@ public class GameApplication extends Application {
         //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         //stage.setTitle("World Of water!");
         //stage.setScene(scene);
-        loadScene("hello-view.fxml");
-        //Image pic1 = new Image();
-        //stage.getIcons().add(pic1);
-        //stage.show();
+        loadScene(Main.game()+".fxml");
     }
 
     public static void main(String[] args) {

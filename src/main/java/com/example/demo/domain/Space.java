@@ -4,9 +4,11 @@ import java.util.Set;
 
 class Space extends Node {
 
+
   Space (String name, String description) {
     super(name, description);
   }
+
 
   public int getWaterAmount() {
     return water;

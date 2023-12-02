@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.domain.Main;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -18,6 +20,55 @@ public class GameController {
 //            System.out.println(e);
 //        }
 //    }
+    @FXML 
+    public void moveNorth(ActionEvent event){
+        try{
+            if(Main.walk("north")){
+            GameApplication.loadScene(Main.game()+".fxml");
+            }else{
+                wrongDirection(event);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    @FXML 
+    public void moveSouth(ActionEvent event){
+        try{
+            if(Main.walk("south")){
+            GameApplication.loadScene(Main.game()+".fxml");
+            }else{
+                wrongDirection(event);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    @FXML 
+    public void moveEast(ActionEvent event){
+        try{
+            if(Main.walk("east")){
+            GameApplication.loadScene(Main.game()+".fxml");
+            }else{
+                wrongDirection(event);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    @FXML 
+    public void moveWest(ActionEvent event){
+        try{
+            if(Main.walk("west")){
+            GameApplication.loadScene(Main.game()+".fxml");
+            }else{
+                wrongDirection(event);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
     @FXML
     public void toNorthCave(ActionEvent event){
         try{

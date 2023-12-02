@@ -11,7 +11,7 @@ public class Inventory {
 
     private int itemCountInInventory = 0;
 
-    private ArrayList<Item> inventory;
+    private ArrayList<Item> inventory = new ArrayList<>();
 
 //    public boolean collectWater(){
 //

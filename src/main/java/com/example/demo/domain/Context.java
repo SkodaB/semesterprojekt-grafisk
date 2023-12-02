@@ -6,12 +6,14 @@ public class Context {
   Player player;
   Shop shop;
   Inventory inventory;
+  World world;
 
-  Context(Space node, Player playerIn, Shop shopIn, Inventory inventoryIn) {
+  Context(Space node, Player playerIn, Shop shopIn, Inventory inventoryIn, World worldIn) {
     current = node;
     player = playerIn;
     shop = shopIn;
     inventory = inventoryIn;
+    world = worldIn;
     //initialize items in inventory
     inventory.addItem(new Hands());
     //initialize items in shop

@@ -6,16 +6,14 @@ public class Main {
     static Inventory inventory = new Inventory(5);
     static Player player = new Player("name",0);
     static Shop shop = new Shop();
-    static Context context = new Context(world.getEntry(),player,shop,inventory);
+    static Context context = new Context(world.getEntry(),player,shop,inventory,world);
 
 
-    public static void main(String args[]){
-        startGame();
+
+    public static String game(){
+        return world.spaceFxml.get(context.getCurrent());
     }
-
-    private static void startGame(){
-        while(!context.isDone()){
-            
-        }
+    public static boolean walk(String direction){
+        return context.transition(direction);
     }
 }

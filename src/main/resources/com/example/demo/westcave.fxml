@@ -12,10 +12,10 @@
             <Image url="@West-Cave.png" />
          </image>
       </ImageView>
-      <Button layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#wrongDirection" text="N" />
-      <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#toNorthCave" text="E" />
-      <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#wrongDirection" text="W" />
-      <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#wrongDirection" text="S" />
+      <Button layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#moveNorth" text="North" />
+      <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveEast" text="East" />
+      <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveWest" text="West" />
+      <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#moveSouth" text="South" />
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Collect" />
    </children>
 </AnchorPane>
