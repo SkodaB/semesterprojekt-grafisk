@@ -9,11 +9,6 @@ public class GameController {
     private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Eow dig!");
-    }
-
-    @FXML
     public void toEntry(ActionEvent event){
         try{
             GameApplication.loadScene("hello-view.fxml");
@@ -22,11 +17,19 @@ public class GameController {
         }
     }
     @FXML
-    public void toSouthCave(ActionEvent event){
+    public void toNorthCave(ActionEvent event){
         try{
             GameApplication.loadScene("northcave.fxml");
         }catch(Exception e){
             System.out.println(e);
         } 
+    }
+    @FXML
+    public void toSouthCave(ActionEvent event){
+        try{
+            GameApplication.loadScene("southcave.fxml");
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
 }

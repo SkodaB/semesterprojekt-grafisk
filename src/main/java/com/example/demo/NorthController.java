@@ -6,16 +6,5 @@ import javafx.scene.image.ImageView;
 import javafx.fxml.FXML;
 
 public class NorthController  {
-    @FXML private ImageView northImageView;
-    @FXML Button goSouth;
-    @FXML Image sCavePic = new Image (getClass().getResourceAsStream("South-Cave.png"));
-    public void displayImage(){
-        northImageView.setImage(sCavePic);
-    }
-
-
-
-
-
 
 }
