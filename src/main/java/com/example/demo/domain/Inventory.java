@@ -47,4 +47,8 @@ public class Inventory {
         }
         return false;
     }
+
+    public ArrayList<Item> getInventoryContents(){
+        return this.inventory;
+    }
 }

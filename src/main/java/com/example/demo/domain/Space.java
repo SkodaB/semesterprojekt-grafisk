@@ -5,8 +5,8 @@ import java.util.Set;
 class Space extends Node {
 
 
-  Space (String name, String description) {
-    super(name, description);
+  Space (String name, String description,int waterAmount) {
+    super(name, description,waterAmount);
   }
 
 

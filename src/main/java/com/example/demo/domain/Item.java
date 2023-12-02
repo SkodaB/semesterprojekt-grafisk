@@ -21,6 +21,10 @@ public abstract class Item {
         this.progress = new boolean[]{isFull,roughFiltered,fineFiltered,coalFiltered};
     }
 
+    public boolean[] getProgress(){
+        return this.progress;
+    }
+
     public String getName(){
         return name;
     }

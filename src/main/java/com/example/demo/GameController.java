@@ -20,6 +20,16 @@ public class GameController {
 //            System.out.println(e);
 //        }
 //    }
+
+    @FXML
+    public void collect(ActionEvent event){
+        try{
+            Main.commandExecute("collect", null);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
     @FXML 
     public void moveNorth(ActionEvent event){
         try{

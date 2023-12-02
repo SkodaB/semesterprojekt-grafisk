@@ -16,6 +16,6 @@
       <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveEast" text="East" />
       <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveWest" text="West" />
       <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#moveSouth" text="South" />
-      <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Collect" />
+      <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Collect" onAction="#collect"/>
    </children>
 </AnchorPane>

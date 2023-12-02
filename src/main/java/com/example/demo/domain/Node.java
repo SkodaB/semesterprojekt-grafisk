@@ -6,14 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Node {
-  int water = 400;
+  int water;
   String name;
   String description;
   Map<String, Node> edges = new HashMap<String, Node>();
   
-  Node (String name, String description) {
+  Node (String name, String description,int waterAmount) {
     this.name = name;
     this.description = description;
+    this.water = waterAmount;
   }
   
   public String getName () {
