@@ -13,8 +13,8 @@
          </image>
       </ImageView>
       <Button layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#toEntrance" text="N" />
-      <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" text="E" />
-      <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" text="W" />
+      <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#wrongDirection" text="E" />
+      <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#wrongDirection" text="W" />
       <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#toFineFilter" text="S" />
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Collect" />
    </children>

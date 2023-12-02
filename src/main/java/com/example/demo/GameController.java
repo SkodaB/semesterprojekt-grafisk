@@ -2,6 +2,8 @@ package com.example.demo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 
 public class GameController {
@@ -97,5 +99,13 @@ public class GameController {
         }
     }
     //En command til at sige du kan ikke gå den her vej
+    public void wrongDirection (ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("HUR HUR HUR HUR");
+        alert.setContentText("Click 'OK'");
+        if (alert.showAndWait().get() == ButtonType.OK){
+            alert.close();
+        }
+    }
 
 }
