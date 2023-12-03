@@ -244,7 +244,7 @@ public class GameController {
             String buttonPressed = ((Button)e.getSource()).getId();
             if (Shop.checkHowMany(buttonPressed) == 0){
                 shopWarning.setVisible(true);
-                shopWarningText. setText("There ar no more "+ buttonPressed.toLowerCase() + "'s left");
+                shopWarningText. setText("There are no more "+ buttonPressed.toLowerCase() + "'s left");
             }else {
                 shopWarning.setVisible(false);
                 Shop.removeItem(buttonPressed);
