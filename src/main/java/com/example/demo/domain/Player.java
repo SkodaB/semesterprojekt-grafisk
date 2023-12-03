@@ -36,4 +36,8 @@ public class Player {
     public void resetWater(double amount){
         this.water = 0;
     }
+
+    public double getPoints(){
+        return points;
+    }
 }

@@ -23,6 +23,7 @@
       <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveWest" text="West" />
       <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#moveSouth" text="South" />
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#OpenShop" text="Buy" />
+      <ListView fx:id="inventory" layoutX="16.0" layoutY="173.0" prefHeight="130.0" prefWidth="162.0" />
       <Pane fx:id="shop" layoutX="262.0" layoutY="100.0" opacity="0.83" prefHeight="200.0" prefWidth="275.0" style="-fx-border-color: black; -fx-border-radius: 2; -fx-background-color: D1BE9D; -fx-border-width: 3;" visible="false">
          <cursor>
             <Cursor fx:constant="DEFAULT" />

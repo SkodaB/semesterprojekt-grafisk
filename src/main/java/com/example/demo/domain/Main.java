@@ -15,6 +15,10 @@ public class Main {
         registry.register("collect", new CommandCollect());
     }
 
+    public static Context getContext(){
+        return context;
+    }
+
     public static String game(){
         initRegistry();
         return world.spaceFxml.get(context.getCurrent());

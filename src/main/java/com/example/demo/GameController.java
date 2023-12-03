@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
@@ -18,6 +19,9 @@ import java.util.ArrayList;
 import java.util.EventObject;
 
 public class GameController {
+
+    Context context = Main.getContext();
+
     @FXML
     private Label welcomeText;
     @FXML
@@ -39,6 +43,9 @@ public class GameController {
     @FXML
     private Label shopWarningText;
 
+    @FXML
+    private ListView<Item> inventory;
+
 //    @FXML
 //    public void toEntry(ActionEvent event){
 //        try{
@@ -47,6 +54,18 @@ public class GameController {
 //            System.out.println(e);
 //        }
 //    }
+
+    @FXML
+    public void updateInventory(ActionEvent event){
+        try{    
+            ArrayList<Item> items = Main.getContext().getInventory().getInventoryContents();
+            for(int i = 0;i<items.size();i++){
+                inventory.getItems().add(items.get(i));
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
 
     @FXML
     public void collect(ActionEvent event){
@@ -236,6 +255,7 @@ public class GameController {
         }
 
     }
+
 
     public void realodShop(){
         try {

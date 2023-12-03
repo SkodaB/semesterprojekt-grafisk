@@ -43,6 +43,19 @@ public class Shop {
         }
     }
 
+    public static boolean buyItem(String itemName,Item item, Player player){
+        double balance = player.getPoints();
+        if(Shop.checkHowMany(itemName)==0){
+            return false;
+        }else if(checkPrice(itemName)>balance){
+            return false;
+        }else{
+            Main.getContext().getInventory().addItem(item);
+            player.subtractPoints(checkPrice(itemName));
+            return true;
+        }
+    }
+
 
 
 }
