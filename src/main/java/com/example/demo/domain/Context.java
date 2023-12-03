@@ -24,6 +24,9 @@ public class Context {
     shop.addItem(new Bucket());
     shop.addItem(new Bucket());
     shop.addItem(new Firetruck());
+    shop.addItem(new Firetruck());
+    shop.addItem(new Firetruck());
+    shop.addItem(new Firetruck());
   }
 
   public Inventory getInventory() {

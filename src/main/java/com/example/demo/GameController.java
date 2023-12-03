@@ -1,16 +1,43 @@
 package com.example.demo;
 
-import com.example.demo.domain.Main;
+import com.example.demo.domain.*;
 
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.util.Duration;
+
+
+import java.util.ArrayList;
+import java.util.EventObject;
 
 public class GameController {
     @FXML
     private Label welcomeText;
+    @FXML
+    private Pane shop;
+    @FXML
+    private Pane shopWarning;
+    @FXML
+    private Label BucketPrice;
+    @FXML
+    private Label WheelbarrowPrice;
+    @FXML
+    private Label FiretruckPrice;
+    @FXML
+    private Label BucketQuantity;
+    @FXML
+    private Label WheelbarrowQuantity;
+    @FXML
+    private Label FiretruckQuantity;
+    @FXML
+    private Label shopWarningText;
 
 //    @FXML
 //    public void toEntry(ActionEvent event){
@@ -30,7 +57,7 @@ public class GameController {
         }
     }
 
-    @FXML 
+    @FXML
     public void moveNorth(ActionEvent event){
         try{
             if(Main.walk("north")){
@@ -42,7 +69,7 @@ public class GameController {
             System.out.println(e);
         }
     }
-    @FXML 
+    @FXML
     public void moveSouth(ActionEvent event){
         try{
             if(Main.walk("south")){
@@ -54,7 +81,7 @@ public class GameController {
             System.out.println(e);
         }
     }
-    @FXML 
+    @FXML
     public void moveEast(ActionEvent event){
         try{
             if(Main.walk("east")){
@@ -66,7 +93,7 @@ public class GameController {
             System.out.println(e);
         }
     }
-    @FXML 
+    @FXML
     public void moveWest(ActionEvent event){
         try{
             if(Main.walk("west")){
@@ -85,7 +112,7 @@ public class GameController {
             GameApplication.loadScene("northcave.fxml");
         }catch(Exception e){
             System.out.println(e);
-        } 
+        }
     }
     @FXML
     public void toSouthCave(ActionEvent event){
@@ -167,6 +194,67 @@ public class GameController {
         if (alert.showAndWait().get() == ButtonType.OK){
             alert.close();
         }
+    }
+
+    private boolean clicked = true;
+
+
+    @FXML
+    public void OpenShop() {
+        try {
+            if (!Shop.shopHasItem()){
+                shopWarning.setVisible(true);
+            }
+            else if (clicked && Shop.shopHasItem()) {
+                shop.setVisible(true);
+                realodShop();
+                clicked =false;
+            } else {
+                shop.setVisible(false);
+                shopWarning.setVisible(false);
+                clicked = true;
+            }
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void buyFromShop(Event e){
+        try {
+            String buttonPressed = ((Button)e.getSource()).getId();
+            if (Shop.checkHowMany(buttonPressed) == 0){
+                shopWarning.setVisible(true);
+                shopWarningText. setText("There ar no more "+ buttonPressed.toLowerCase() + "'s left");
+            }else {
+                shopWarning.setVisible(false);
+                Shop.removeItem(buttonPressed);
+                realodShop();
+            }
+        }catch (Exception n){
+            System.out.println(n);
+        }
+
+    }
+
+    public void realodShop(){
+        try {
+            if (!Shop.shopHasItem()){
+                shopWarning.setVisible(true);
+                shopWarningText. setText("The shop owner has no items left");
+                shop.setVisible(false);
+            }else {
+                BucketQuantity.setText("Quantity: "+ Shop.checkHowMany("Bucket"));
+                WheelbarrowQuantity.setText("Quantity: "+Shop.checkHowMany("Wheelbarrow"));
+                FiretruckQuantity.setText("Quantity: "+Shop.checkHowMany("Firetruck"));
+                BucketPrice.setText("Price: "+ Shop.checkPrice("Bucket"));
+                WheelbarrowPrice.setText("Price: "+Shop.checkPrice("Wheelbarrow"));
+                FiretruckPrice.setText("Price: "+Shop.checkPrice("Firetruck"));
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
     }
 
 }
