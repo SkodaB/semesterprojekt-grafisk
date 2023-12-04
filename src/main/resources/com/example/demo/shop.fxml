@@ -23,7 +23,8 @@
       <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveEast" text="East" />
       <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveWest" text="West" />
       <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#moveSouth" text="South" />
-      <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Buy" onAction="#OpenShop"/>
+      <Button fx:id="openShop" layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#OpenShop" text="Open Shop" />
+      <Label fx:id="Points" layoutX="18.0" layoutY="337.0" prefHeight="17.0" prefWidth="166.0" text="Points" />
       <ListView fx:id="inventory" layoutX="200.0" layoutY="400.0" prefHeight="161.0" prefWidth="400.0" />
       <Label layoutX="137.0" layoutY="411.0" text="Inventory" />
       <ImageView fitHeight="277.0" fitWidth="138.0" layoutX="600.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">

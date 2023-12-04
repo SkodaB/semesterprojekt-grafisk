@@ -9,16 +9,16 @@ public class Player {
 
     private String name;
 
-    private double points;
+    private static double points;
 
     private double water;
 
-    public void addPoints(double amount){
-        this.points += amount;
+    public static void addPoints(double amount){
+        points += amount;
     }
 
-    public void subtractPoints(double amount){
-        this.points -=amount;
+    public static void subtractPoints(double amount){
+        points -=amount;
     }
 
     public void resetPoints(){
@@ -37,7 +37,7 @@ public class Player {
         this.water = 0;
     }
 
-    public double getPoints(){
+    public static double getPoints(){
         return points;
     }
 

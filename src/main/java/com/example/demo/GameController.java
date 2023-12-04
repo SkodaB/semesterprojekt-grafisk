@@ -53,6 +53,9 @@ public class GameController implements Initializable{
         responseMsg.put("wrongLocationn","Wrong location.");
         responseMsg.put("gameCompleted","gameCompleted");
 
+        reloadPoints();
+
+
     }
 
     Context context = Main.getContext();
@@ -77,7 +80,10 @@ public class GameController implements Initializable{
     private Label FiretruckQuantity;
     @FXML
     private Label shopWarningText;
-
+    @FXML
+    private Label Points;
+    @FXML
+    private Button openShop;
     @FXML
     private Label endScore;
 
@@ -316,10 +322,12 @@ public class GameController implements Initializable{
                 shopWarning.setVisible(true);
             }
             else if (clicked && Shop.shopHasItem()) {
+                openShop.setText("Close Shop");
                 shop.setVisible(true);
                 realodShop();
                 clicked =false;
             } else {
+                openShop.setText("Open Shop");
                 shop.setVisible(false);
                 shopWarning.setVisible(false);
                 clicked = true;
@@ -330,16 +338,24 @@ public class GameController implements Initializable{
     }
 
     @FXML
-    public void buyFromShop(Event e){
+    public void buyFromShop(Event e ){
         try {
+            ActionEvent event = null;
+            
             String buttonPressed = ((Button)e.getSource()).getId();
             if (Shop.checkHowMany(buttonPressed) == 0){
                 shopWarning.setVisible(true);
                 shopWarningText. setText("There ar no more "+ buttonPressed.toLowerCase() + "'s left");
             }else {
                 shopWarning.setVisible(false);
-                Shop.removeItem(buttonPressed);
-                realodShop();
+                if (Shop.buyItem(buttonPressed)){
+                    realodShop();
+                    reloadPoints();
+                    updateInventory(event);
+                }else {
+                    shopWarning.setVisible(true);
+                    shopWarningText. setText("You don't have enough points");
+                }
             }
         }catch (Exception n){
             System.out.println(n);
@@ -347,6 +363,9 @@ public class GameController implements Initializable{
 
     }
 
+    public void reloadPoints(){
+        try {Points.setText("Points: "+Player.getPoints());}catch (Exception e){System.out.println(e);}
+    }
 
     public void realodShop(){
         try {

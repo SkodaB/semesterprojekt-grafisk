@@ -27,6 +27,9 @@ public class Context {
     shop.addItem(new Firetruck());
     shop.addItem(new Firetruck());
     shop.addItem(new Firetruck());
+
+    Player.addPoints(10000);
+
   }
 
   public Inventory getInventory() {
