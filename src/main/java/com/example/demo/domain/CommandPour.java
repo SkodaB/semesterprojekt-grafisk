@@ -24,7 +24,7 @@ public class CommandPour implements Command{
                     }
                     inventory.get(i).setProgress(false, false, false, false);
                     return "pourSuccess";
-                    context.getPlayer().setPoints(context.getPlayer().getPoints()+100);
+                    context.getPlayer().addPoints(100);
                 }else if(inventory.get(i).getIsFull()==true){
                     inventory.get(i).setFiltered(0, false);
                     inventory.get(i).setFiltered(1, false);
