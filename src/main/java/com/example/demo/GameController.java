@@ -39,20 +39,10 @@ public class GameController implements Initializable{
         for (int i = 0;i<items.size();i++){
             inventory.getItems().add(items.get(i));
         }
-        responseMsg.put("noWaterInItem","You have no water in one item.");
-        responseMsg.put("roughFilterSuccess","At least one item filtered successfully.");
-        responseMsg.put("alreadyFiltered","Water has already been through this filter for one item.");
         responseMsg.put("noItems","You have no items in your inventory. Consider going to the shop.");
         responseMsg.put("noWaterInCave","There's no water in this cave.");
-        responseMsg.put("locationNotElligible","You cannot collect water here.");
-        responseMsg.put("successCollect","You have successfully collected water.");
-        responseMsg.put("alreadyFull","One item is already full.");
-        responseMsg.put("fineFilterSuccess","One item was finely filtered successfully");
-        responseMsg.put("notFilteredOrNoWater","One item is either not filtered properly or there is no water in it at all.");
-        responseMsg.put("coalFilterSuccess","Successfully coal filtered for one item.");
         responseMsg.put("wrongLocationn","Wrong location.");
         responseMsg.put("gameCompleted","gameCompleted");
-        responseMsg.put("pourSuccess","You successfully poured water for one or more items.");
         responseMsg.put("waterGoneBad","You poured dirty water into the resivour!");
 
         reloadPoints();
@@ -117,6 +107,9 @@ public class GameController implements Initializable{
     }
 
     public void alerter(String msg){
+        if (msg == null){
+            return;
+        }
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("HUR HUR HUR HUR");
         alert.setContentText(msg);
