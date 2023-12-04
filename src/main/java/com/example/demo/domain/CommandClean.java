@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+/*package com.example.demo.domain;
 
 import java.util.ArrayList;
 
@@ -68,3 +68,4 @@ public class CommandClean implements Command{
     }
 }
 
+*/
