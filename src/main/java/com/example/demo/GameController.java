@@ -45,6 +45,7 @@ public class GameController implements Initializable{
         responseMsg.put("noWaterInCave","There's no water in this cave.");
         responseMsg.put("locationNotElligible","You cannot collect water here.");
         responseMsg.put("successCollect","You have successfully collected water.");
+        responseMsg.put("alreadyFull","One item is already full.");
     }
 
     Context context = Main.getContext();
@@ -98,7 +99,7 @@ public class GameController implements Initializable{
     public void updateInventory(ActionEvent event){
         try{    
             ArrayList<Item> items = Main.getContext().getInventory().getInventoryContents();
-            items.clear();
+            inventory.getItems().clear();
             for(int i = 0;i<items.size();i++){
                 inventory.getItems().add(items.get(i));
             }

@@ -8,18 +8,14 @@ public class CommandCollect implements Command{
         ArrayList<Item> inventory = context.getInventory().getInventoryContents();
         if(context.getCurrent().getWaterAmount()<=0){
             return "noWaterInCave";
-        }else if(context.getCurrent().getName()!="Entry cave" ||
-                 context.getCurrent().getName()!="Western cave" ||
-                 context.getCurrent().getName()!="Eastern cave" ||
-                 context.getCurrent().getName()!="Northern cave" ){
-                    return "locationNotElligible";
-                 }
-        else if(inventory.size()==0){
+        }else if(inventory.size()==0){
             return "noItems";
         }else{
             for (int i = 0;i<inventory.size();i++){
-                if(inventory.get(i).getProgress()[0]){
+                if(inventory.get(i).getProgress()[0]==false){
                     inventory.get(i).setProgress(true, false, false, false);
+                }else{
+                    return "alreadyFull";
                 }
             }
             return "successCollect";

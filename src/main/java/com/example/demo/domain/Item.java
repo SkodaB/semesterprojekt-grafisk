@@ -6,6 +6,7 @@ public abstract class Item {
         this.name = name;
         this.price = price;
         this.capacity = capacity;
+        this.setProgress(false, false, false, false);
     }
 
     private String name;
@@ -32,6 +33,6 @@ public abstract class Item {
 
     @Override
     public String toString(){
-        return name;
+        return name + " - Full: " + progress[0] +" RoughF: "+ progress[1] + " FineF: "+progress[2] + " CoalF: "+ progress[3];
     }
 }
