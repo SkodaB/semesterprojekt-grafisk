@@ -6,6 +6,7 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -14,11 +15,24 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
-
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.EventObject;
+import java.util.ResourceBundle;
 
-public class GameController {
+public class GameController implements Initializable{
+
+
+    @FXML
+    private ListView<Item> inventory;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        ArrayList<Item> items = context.getInventory().getInventoryContents();
+        for (int i = 0;i<items.size();i++){
+            inventory.getItems().add(items.get(i));
+        }
+    }
 
     Context context = Main.getContext();
 
@@ -43,8 +57,7 @@ public class GameController {
     @FXML
     private Label shopWarningText;
 
-    @FXML
-    private ListView<Item> inventory;
+
 
 //    @FXML
 //    public void toEntry(ActionEvent event){
