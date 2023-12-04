@@ -40,7 +40,7 @@ public class GameController implements Initializable{
             inventory.getItems().add(items.get(i));
         }
         responseMsg.put("noWaterInItem","You have no water in one item.");
-        responseMsg.put("roughFilterSuccess","Water filtered successfully for one item.");
+        responseMsg.put("roughFilterSuccess","At least one item filtered successfully.");
         responseMsg.put("alreadyFiltered","Water has already been through this filter for one item.");
         responseMsg.put("noItems","You have no items in your inventory. Consider going to the shop.");
         responseMsg.put("noWaterInCave","There's no water in this cave.");
@@ -105,8 +105,7 @@ public class GameController implements Initializable{
 
     public void endGame(){
         try{
-            GameApplication.loadScene("endgame.fxml");
-            endScore.setText(Double.toString(Main.getContext().getPlayer().getPoints()));
+            GameApplication.loadScene("theend.fxml");
         }catch(Exception e){
             System.out.println(e);
         }
@@ -367,7 +366,14 @@ public class GameController implements Initializable{
     }
 
     public void reloadPoints(){
-        try {Points.setText("Points: "+Main.getContext().getPlayer().getPoints());}catch (Exception e){System.out.println(e);}
+        try {
+            Points.setText("Points: "+Main.getContext().getPlayer().getPoints());
+            if(this.endScore!=null){
+                endScore.setText(""+Main.getContext().getPlayer().getPoints());
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
     public void realodShop(){
