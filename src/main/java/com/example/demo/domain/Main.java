@@ -29,9 +29,9 @@ public class Main {
     public static boolean collect(){
          return true;
     }
-    public static boolean commandExecute(String name,String parameters[]){
+    public static String commandExecute(String name,String parameters[]){
         if(registry.getCommand(name)==null){
-            return false;
+            return "commandError";
         }else{
             return registry.getCommand(name).execute(context, parameters);
         }
