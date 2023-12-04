@@ -14,6 +14,7 @@ public class Main {
     private static void initRegistry(){
         registry.register("collect", new CommandCollect());
         registry.register("clean", new CommandClean());
+        registry.register("pour", new CommandPour());
     }
 
     public static Context getContext(){

@@ -52,6 +52,8 @@ public class GameController implements Initializable{
         responseMsg.put("coalFilterSuccess","Successfully coal filtered for one item.");
         responseMsg.put("wrongLocationn","Wrong location.");
         responseMsg.put("gameCompleted","gameCompleted");
+        responseMsg.put("pourSuccess","You successfully poured water for one or more items.");
+        responseMsg.put("waterGoneBad","You poured dirty water into the resivour!");
 
         reloadPoints();
 
@@ -126,7 +128,8 @@ public class GameController implements Initializable{
 
     @FXML
     public void updateInventory(ActionEvent event){
-        try{    
+        try{
+            reloadPoints();
             ArrayList<Item> items = Main.getContext().getInventory().getInventoryContents();
             inventory.getItems().clear();
             for(int i = 0;i<items.size();i++){
