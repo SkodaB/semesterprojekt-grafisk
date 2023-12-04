@@ -141,7 +141,10 @@ public class GameController {
             System.out.println(e);
         }
     }
-    @FXML
+
+
+   /*
+   @FXML
     public void toEntrance(ActionEvent event){
         try{
             GameApplication.loadScene("entry.fxml");
@@ -205,6 +208,9 @@ public class GameController {
             System.out.println(e);
         }
     }
+    */
+
+
     //En command til at sige du kan ikke gå den her vej
     public void wrongDirection (ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
