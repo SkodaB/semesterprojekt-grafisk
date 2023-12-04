@@ -43,8 +43,8 @@ public class Shop {
         }
     }
 
-    public static boolean buyItem(String itemName){
-        double balance = Player.getPoints();
+    public boolean buyItem(String itemName){
+        double balance = Main.getContext().getPlayer().getPoints();
         if(Main.getContext().getShop().checkHowMany(itemName)==0){
             return false;
         }else if(Main.getContext().getShop().checkPrice(itemName)>balance){
@@ -52,7 +52,7 @@ public class Shop {
         }else{
             for (int i = 0; i < Main.getContext().getShop().shopItems.size(); i++) {
                 if (Objects.equals(itemName, Main.getContext().getShop().shopItems.get(i).getName())) {
-                    Player.subtractPoints(Main.getContext().getShop().checkPrice(itemName));
+                    Main.getContext().getPlayer().subtractPoints(Main.getContext().getShop().checkPrice(itemName));
                     Main.getContext().getInventory().addItem(Main.getContext().getShop().shopItems.get(i));
                     Main.getContext().getShop().removeItem(itemName);
                     break;

@@ -364,7 +364,7 @@ public class GameController implements Initializable{
     }
 
     public void reloadPoints(){
-        try {Points.setText("Points: "+Player.getPoints());}catch (Exception e){System.out.println(e);}
+        try {Points.setText("Points: "+Main.getContext().getPlayer().getPoints());}catch (Exception e){System.out.println(e);}
     }
 
     public void realodShop(){
