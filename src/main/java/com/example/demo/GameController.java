@@ -46,6 +46,11 @@ public class GameController implements Initializable{
         responseMsg.put("locationNotElligible","You cannot collect water here.");
         responseMsg.put("successCollect","You have successfully collected water.");
         responseMsg.put("alreadyFull","One item is already full.");
+        responseMsg.put("fineFilterSuccess","One item was finely filtered successfully");
+        responseMsg.put("notFilteredOrNoWater","One item is either not filtered properly or there is no water in it at all.");
+        responseMsg.put("coalFilterSuccess","Successfully coal filtered for one item.");
+        responseMsg.put("wrongLocationn","Wrong location.");
+
     }
 
     Context context = Main.getContext();
@@ -122,7 +127,8 @@ public class GameController implements Initializable{
     @FXML
     public void filter(ActionEvent event){
         try {
-            Main.commandExecute("clean", null);
+            String response = Main.commandExecute("clean", null);
+            interpreter(response);
             updateInventory(event);
         } catch (Exception e) {
             System.out.println(e);

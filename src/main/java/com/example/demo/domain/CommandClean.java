@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class CommandClean implements Command{
     @Override
     public String execute(Context context, String Parameters[]) {
+        System.out.println("test");
         ArrayList<Item> inventory = context.getInventory().getInventoryContents();
         if (context.getCurrent().name == "Rough filter") {
                 for (int i = 0; i < inventory.size(); i++) {
                     if(inventory.get(i).getProgress()[0]==false){
                         return "noWaterInItem";
                     }
-                    if (inventory.get(i).getProgress()[1] == false) {
+                    else if (inventory.get(i).getProgress()[1] == false) {
                         inventory.get(i).setProgress(true, true, false, false);
                         context.getPlayer().addPoints(10);
                         return "roughFilterSuccess";
@@ -40,7 +41,7 @@ public class CommandClean implements Command{
         } else if (context.getCurrent().name == "Active Coal Filter") {
             for (int i = 0;i<inventory.size();i++){
                 if(inventory.get(i).getProgress()[0]==true && inventory.get(i).getProgress()[1]==true && inventory.get(i).getProgress()[2]==true){
-                    if(inventory.get(i).getProgress()[2]==true){
+                    if(inventory.get(i).getProgress()[3]==true){
                         return "alreadyFiltered";
                     }else{
                         inventory.get(i).setProgress(true, true, true, true);
