@@ -52,7 +52,8 @@ public class GameController implements Initializable{
         responseMsg.put("coalFilterSuccess","Successfully coal filtered for one item.");
         responseMsg.put("wrongLocationn","Wrong location.");
         responseMsg.put("gameCompleted","gameCompleted");
-
+        reloadPoints();
+        realodShop();
     }
 
     Context context = Main.getContext();
@@ -77,7 +78,10 @@ public class GameController implements Initializable{
     private Label FiretruckQuantity;
     @FXML
     private Label shopWarningText;
-
+    @FXML
+    private Label Points;
+    @FXML
+    private Button openShop;
     @FXML
     private Label endScore;
 
