@@ -1,5 +1,5 @@
-/*package com.example.demo.domain;
-
+package com.example.demo.domain;
+/* 
 import java.util.ArrayList;
 
 public class CommandClean implements Command{
@@ -32,10 +32,9 @@ public class CommandClean implements Command{
             for (int i = 0;i<inventory.size();i++){
                 if(inventory.get(i).getProgress()[0]==true && inventory.get(i).getProgress()[1]==true){
                     if(inventory.get(i).getProgress()[2]==true){
-                        System.out.println("Item has already been through the fine filter for item " + inventory.get(i).getItemName());
+                        return false;
                     }else{
-                        inventory.get(i).setProgress(true, true, true, false);(1, true);
-                        System.out.println("Water filtered successfully for item " + inventory.get(i).getItemName());
+                        inventory.get(i).setProgress(true, true, true, false);
                         context.getPlayer().addPoints(10);
                         System.out.println("10 points awarded!");
                     }
@@ -67,5 +66,4 @@ public class CommandClean implements Command{
         }
     }
 }
-
 */

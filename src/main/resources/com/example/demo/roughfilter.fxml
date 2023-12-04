@@ -5,8 +5,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="423.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,7 +18,8 @@
       <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveEast" text="East" />
       <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveWest" text="West" />
       <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#moveSouth" text="South" />
-      <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Collect" />
-      <ListView fx:id="inventory" layoutX="16.0" layoutY="173.0" prefHeight="130.0" prefWidth="162.0" />
+      <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Filter" onAction="#filter" />
+      <ListView fx:id="inventory" layoutX="200.0" layoutY="400.0" prefHeight="161.0" prefWidth="400.0" />
+      <Label layoutX="137.0" layoutY="411.0" text="Inventory" />
    </children>
 </AnchorPane>

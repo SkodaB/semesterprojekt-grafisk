@@ -90,6 +90,23 @@ public class GameController implements Initializable{
     }
 
     @FXML
+    public void filter(ActionEvent event){
+        try {
+            System.out.println("filter placeholder");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    @FXML
+    public void pour(ActionEvent event){
+        try {
+            System.out.println("placeholder");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    @FXML
     public void moveNorth(ActionEvent event){
         try{
             if(Main.walk("north")){

@@ -29,4 +29,9 @@ public abstract class Item {
         return name;
     }
     public Double getPrice(){return price;}
+
+    @Override
+    public String toString(){
+        return name;
+    }
 }
