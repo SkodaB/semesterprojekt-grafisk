@@ -22,6 +22,7 @@
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Filter" onAction="#filter" />
       <ListView fx:id="inventory" layoutX="200.0" layoutY="400.0" prefHeight="161.0" prefWidth="400.0" />
       <Label layoutX="137.0" layoutY="411.0" text="Inventory" />
+      <Label fx:id="Points" layoutX="18.0" layoutY="337.0" prefHeight="17.0" prefWidth="67.0" text="Points" />
       <ImageView fitHeight="277.0" fitWidth="138.0" layoutX="600.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Placering.png" />

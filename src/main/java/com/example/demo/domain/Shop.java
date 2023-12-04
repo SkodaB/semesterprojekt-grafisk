@@ -34,24 +34,30 @@ public class Shop {
         return 0;
     }
 
-    public static void removeItem(String item){
+    public static void removeItem(String itemName){
         for (int i = 0; i < shopItems.size(); i++) {
-            if (Objects.equals(item, shopItems.get(i).getName())) {
+            if (Objects.equals(itemName, shopItems.get(i).getName())) {
                 shopItems.remove(i);
                 break;
             }
         }
     }
 
-    public static boolean buyItem(String itemName,Item item, Player player){
-        double balance = player.getPoints();
+    public static boolean buyItem(String itemName){
+        double balance = Player.getPoints();
         if(Shop.checkHowMany(itemName)==0){
             return false;
         }else if(checkPrice(itemName)>balance){
             return false;
         }else{
-            Main.getContext().getInventory().addItem(item);
-            player.subtractPoints(checkPrice(itemName));
+            for (int i = 0; i < shopItems.size(); i++) {
+                if (Objects.equals(itemName, shopItems.get(i).getName())) {
+                    Player.subtractPoints(checkPrice(itemName));
+                    Main.getContext().getInventory().addItem(shopItems.get(i));
+                    removeItem(itemName);
+                    break;
+                }
+            }
             return true;
         }
     }
