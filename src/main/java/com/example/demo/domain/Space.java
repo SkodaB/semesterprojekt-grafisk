@@ -13,9 +13,9 @@ class Space extends Node {
     water -= amount;
     return water;
   }
-  public void addWater(double amount)[
+  public void addWater(double amount){
     water += amount;
-  ]
+  }
 
   public int getWaterAmount() {
     return water;
