@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import javafx.application.Platform;
 
 
 import java.net.URL;
@@ -50,6 +51,7 @@ public class GameController implements Initializable{
         responseMsg.put("notFilteredOrNoWater","One item is either not filtered properly or there is no water in it at all.");
         responseMsg.put("coalFilterSuccess","Successfully coal filtered for one item.");
         responseMsg.put("wrongLocationn","Wrong location.");
+        responseMsg.put("gameCompleted","gameCompleted");
 
     }
 
@@ -76,7 +78,8 @@ public class GameController implements Initializable{
     @FXML
     private Label shopWarningText;
 
-
+    @FXML
+    private Label endScore;
 
 //    @FXML
 //    public void toEntry(ActionEvent event){
@@ -86,6 +89,21 @@ public class GameController implements Initializable{
 //            System.out.println(e);
 //        }
 //    }
+
+    @FXML
+    public void endApp(){
+        Platform.exit();
+    }
+
+    public void endGame(){
+        try{
+            GameApplication.loadScene("endgame.fxml");
+            endScore.setText(Double.toString(Main.getContext().getPlayer().getPoints()));
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        
+    }
 
     public void interpreter(String response){
         alerter(responseMsg.get(response));
@@ -137,7 +155,13 @@ public class GameController implements Initializable{
     @FXML
     public void pour(ActionEvent event){
         try {
-            System.out.println("placeholder");
+            String response = Main.commandExecute("pour", null);
+            if(response.equals("gameCompleted")){
+                endGame();
+            }else{
+                interpreter(response);
+                updateInventory(event);
+            }
         } catch (Exception e) {
             System.out.println(e);
         }

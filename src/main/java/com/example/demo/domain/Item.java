@@ -35,4 +35,8 @@ public abstract class Item {
     public String toString(){
         return name + " - Full: " + progress[0] +" RoughF: "+ progress[1] + " FineF: "+progress[2] + " CoalF: "+ progress[3];
     }
+
+    public double getCapacity(){
+        return capacity;
+    }
 }

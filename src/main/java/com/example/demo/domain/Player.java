@@ -40,4 +40,6 @@ public class Player {
     public double getPoints(){
         return points;
     }
+
+
 }

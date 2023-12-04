@@ -9,6 +9,13 @@ class Space extends Node {
     super(name, description,waterAmount);
   }
 
+  public double removeWater(double amount){
+    water -= amount;
+    return water;
+  }
+  public void addWater(double amount)[
+    water += amount;
+  ]
 
   public int getWaterAmount() {
     return water;
