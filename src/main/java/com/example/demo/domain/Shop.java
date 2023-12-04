@@ -4,19 +4,19 @@ import java.util.Objects;
 
 public class Shop {
     
-    public static ArrayList<Item> shopItems = new ArrayList<Item>();
+    public ArrayList<Item> shopItems = new ArrayList<Item>();
 
     public ArrayList<Item> getShopItems(){
         return shopItems;
     }
 
-    public static boolean shopHasItem(){return !shopItems.isEmpty();}
+    public boolean shopHasItem(){return !shopItems.isEmpty();}
 
-    public static void addItem(Item item){
+    public void addItem(Item item){
         shopItems.add(item);
     }
 
-    public static int checkHowMany(String itemLookingFor){
+    public int checkHowMany(String itemLookingFor){
         int Items = 0;
             for (int j = 0; j < shopItems.size(); j++) {
                 if (Objects.equals(itemLookingFor, shopItems.get(j).getName())) {
@@ -25,7 +25,7 @@ public class Shop {
             }
         return Items;
     }
-    public static double checkPrice(String itemLookingFor){
+    public double checkPrice(String itemLookingFor){
         for (int i = 0; i < shopItems.size(); i++) {
             if (Objects.equals(itemLookingFor, shopItems.get(i).getName())) {
                 return shopItems.get(i).getPrice();
@@ -34,7 +34,7 @@ public class Shop {
         return 0;
     }
 
-    public static void removeItem(String itemName){
+    public void removeItem(String itemName){
         for (int i = 0; i < shopItems.size(); i++) {
             if (Objects.equals(itemName, shopItems.get(i).getName())) {
                 shopItems.remove(i);
@@ -43,18 +43,18 @@ public class Shop {
         }
     }
 
-    public static boolean buyItem(String itemName){
-        double balance = Player.getPoints();
-        if(Shop.checkHowMany(itemName)==0){
+    public boolean buyItem(String itemName){
+        double balance = Main.getContext().getPlayer().getPoints();
+        if(Main.getContext().getShop().checkHowMany(itemName)==0){
             return false;
-        }else if(checkPrice(itemName)>balance){
+        }else if(Main.getContext().getShop().checkPrice(itemName)>balance){
             return false;
         }else{
-            for (int i = 0; i < shopItems.size(); i++) {
-                if (Objects.equals(itemName, shopItems.get(i).getName())) {
-                    Player.subtractPoints(checkPrice(itemName));
-                    Main.getContext().getInventory().addItem(shopItems.get(i));
-                    removeItem(itemName);
+            for (int i = 0; i < Main.getContext().getShop().shopItems.size(); i++) {
+                if (Objects.equals(itemName, Main.getContext().getShop().shopItems.get(i).getName())) {
+                    Main.getContext().getPlayer().subtractPoints(Main.getContext().getShop().checkPrice(itemName));
+                    Main.getContext().getInventory().addItem(Main.getContext().getShop().shopItems.get(i));
+                    Main.getContext().getShop().removeItem(itemName);
                     break;
                 }
             }

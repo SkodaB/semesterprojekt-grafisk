@@ -318,10 +318,10 @@ public class GameController implements Initializable{
     @FXML
     public void OpenShop() {
         try {
-            if (!Shop.shopHasItem()){
+            if (!Main.getContext().getShop().shopHasItem()){
                 shopWarning.setVisible(true);
             }
-            else if (clicked && Shop.shopHasItem()) {
+            else if (clicked && Main.getContext().getShop().shopHasItem()) {
                 openShop.setText("Close Shop");
                 shop.setVisible(true);
                 realodShop();
@@ -341,14 +341,14 @@ public class GameController implements Initializable{
     public void buyFromShop(Event e ){
         try {
             ActionEvent event = null;
-            
+
             String buttonPressed = ((Button)e.getSource()).getId();
-            if (Shop.checkHowMany(buttonPressed) == 0){
+            if (Main.getContext().getShop().checkHowMany(buttonPressed) == 0){
                 shopWarning.setVisible(true);
                 shopWarningText. setText("There ar no more "+ buttonPressed.toLowerCase() + "'s left");
             }else {
                 shopWarning.setVisible(false);
-                if (Shop.buyItem(buttonPressed)){
+                if (Main.getContext().getShop().buyItem(buttonPressed)){
                     realodShop();
                     reloadPoints();
                     updateInventory(event);
@@ -364,22 +364,22 @@ public class GameController implements Initializable{
     }
 
     public void reloadPoints(){
-        try {Points.setText("Points: "+Player.getPoints());}catch (Exception e){System.out.println(e);}
+        try {Points.setText("Points: "+Main.getContext().getPlayer().getPoints());}catch (Exception e){System.out.println(e);}
     }
 
     public void realodShop(){
         try {
-            if (!Shop.shopHasItem()){
+            if (!Main.getContext().getShop().shopHasItem()){
                 shopWarning.setVisible(true);
                 shopWarningText. setText("The shop owner has no items left");
                 shop.setVisible(false);
             }else {
-                BucketQuantity.setText("Quantity: "+ Shop.checkHowMany("Bucket"));
-                WheelbarrowQuantity.setText("Quantity: "+Shop.checkHowMany("Wheelbarrow"));
-                FiretruckQuantity.setText("Quantity: "+Shop.checkHowMany("Firetruck"));
-                BucketPrice.setText("Price: "+ Shop.checkPrice("Bucket"));
-                WheelbarrowPrice.setText("Price: "+Shop.checkPrice("Wheelbarrow"));
-                FiretruckPrice.setText("Price: "+Shop.checkPrice("Firetruck"));
+                BucketQuantity.setText("Quantity: "+ Main.getContext().getShop().checkHowMany("Bucket"));
+                WheelbarrowQuantity.setText("Quantity: "+Main.getContext().getShop().checkHowMany("Wheelbarrow"));
+                FiretruckQuantity.setText("Quantity: "+Main.getContext().getShop().checkHowMany("Firetruck"));
+                BucketPrice.setText("Price: "+ Main.getContext().getShop().checkPrice("Bucket"));
+                WheelbarrowPrice.setText("Price: "+Main.getContext().getShop().checkPrice("Wheelbarrow"));
+                FiretruckPrice.setText("Price: "+Main.getContext().getShop().checkPrice("Firetruck"));
             }
         }catch (Exception e){
             System.out.println(e);
