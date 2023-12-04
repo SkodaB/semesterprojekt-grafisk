@@ -22,7 +22,7 @@ public class CommandCollect implements Command{
                     inventory.get(i).setProgress(true, false, false, false);
                 }
             }
-            return "success";
+            return "successCollect";
         }
     }
 

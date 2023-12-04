@@ -15,12 +15,18 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.EventObject;
 import java.util.ResourceBundle;
+import java.util.Map;
+import java.util.HashMap;
 
 public class GameController implements Initializable{
+
+    static Map<String,String> responseMsg = new HashMap<>();
+
 
 
     @FXML
@@ -32,6 +38,13 @@ public class GameController implements Initializable{
         for (int i = 0;i<items.size();i++){
             inventory.getItems().add(items.get(i));
         }
+        responseMsg.put("noWaterInItem","You have no water in one item.");
+        responseMsg.put("roughFilterSuccess","Water filtered successfully for one item.");
+        responseMsg.put("alreadyFiltered","Water has already been through this filter for one item.");
+        responseMsg.put("noItems","You have no items in your inventory. Consider going to the shop.");
+        responseMsg.put("noWaterInCave","There's no water in this cave.");
+        responseMsg.put("locationNotElligible","You cannot collect water here.");
+        responseMsg.put("successCollect","You have successfully collected water.");
     }
 
     Context context = Main.getContext();
@@ -68,10 +81,24 @@ public class GameController implements Initializable{
 //        }
 //    }
 
+    public void interpreter(String response){
+        alerter(responseMsg.get(response));
+    }
+
+    public void alerter(String msg){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("HUR HUR HUR HUR");
+        alert.setContentText(msg);
+        if (alert.showAndWait().get() == ButtonType.OK){
+            alert.close();
+        }
+    }
+
     @FXML
     public void updateInventory(ActionEvent event){
         try{    
             ArrayList<Item> items = Main.getContext().getInventory().getInventoryContents();
+            items.clear();
             for(int i = 0;i<items.size();i++){
                 inventory.getItems().add(items.get(i));
             }
@@ -83,7 +110,9 @@ public class GameController implements Initializable{
     @FXML
     public void collect(ActionEvent event){
         try{
-            Main.commandExecute("collect", null);
+            String response = Main.commandExecute("collect", null);
+            interpreter(response);
+            updateInventory(event);
         }catch(Exception e){
             System.out.println(e);
         }
@@ -92,7 +121,8 @@ public class GameController implements Initializable{
     @FXML
     public void filter(ActionEvent event){
         try {
-            System.out.println("filter placeholder");
+            Main.commandExecute("clean", null);
+            updateInventory(event);
         } catch (Exception e) {
             System.out.println(e);
         }
