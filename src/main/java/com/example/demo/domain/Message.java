@@ -8,6 +8,11 @@ public enum Message {
     GONE_BAD,
     DROP_SUCCESS,
     WRONG_LOCATION,
-    COMMAND_ERROR
+    COMMAND_ERROR,
+    FIRETRUCK,
+    WHEELBARROW,
+    BUCKET,
+    HANDS,
+    NO_ITEMS_SELECTED
 
 }

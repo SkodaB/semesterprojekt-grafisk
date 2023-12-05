@@ -1,4 +1,4 @@
-/*package com.example.demo.domain;
+package com.example.demo.domain;
 
 import java.util.Scanner;
 
@@ -9,45 +9,39 @@ public class CommandDrop implements Command {
 //        description = "Used to drop items.";
 //    }
     @Override
-    public String execute(Context context, String parameters[]) {
-        Inventory inventory = context.getInventory();
-        int maxDropSize = inventory.getInventoryContents().size();
-
-        // if (parameters.length < 2) {} <--- Idriis Schizo rambling
-
-        if (maxDropSize == 0) { //Logic for drop Command
-            return "noItems";
-        } else {
-            System.out.println("Drop one item, type number to pick item from list displayed: ");
-            for (int i = 0; i < maxDropSize; i++) {
-                System.out.print(" - ");
-                System.out.println(inventory.getInventoryContents().get(i).getItemName());
+    public Message execute(Context context, Message parameters[]) {
+        Item itemLookingFor;
+        if(parameters[0]==null){
+            return Message.NO_ITEMS_SELECTED;
+        }else {
+            switch(parameters[0]){
+                case BUCKET:
+                    itemLookingFor = new Bucket();
+                    break;
+                case WHEELBARROW:
+                    itemLookingFor = new Wheelbarrow();
+                    break;
+                case FIRETRUCK:
+                    itemLookingFor = new Firetruck();
+                    break;
+                case HANDS:
+                    return Message.HANDS;
+                default:
+                    return Message.COMMAND_ERROR;
             }
-        }
-
-        try {
-            System.out.print("> ");
-            Scanner s = new Scanner(System.in);
-            int choice = s.nextInt();
-
-            boolean bigger = choice >= 0;
-            boolean smaller = choice <= 3;
-            boolean gg = choice <= maxDropSize;
-
-            if (bigger == false || smaller == false || gg == false) {
-                System.out.println("Not a valid choice");
-            } else if (bigger == true && smaller == true && gg == true) {
-                choice--;
-                inventory.getInventoryContents().remove(choice);
-                System.out.println("Item in inventory has been removed");
+            for(int i = 0; i<context.getInventory().getInventoryContents().size();i++){
+                if(context.getInventory().getInventoryContents().get(i) instanceof Bucket && itemLookingFor instanceof Bucket){
+                    context.getInventory().getInventoryContents().remove(context.getInventory().getInventoryContents().get(i));
+                    return Message.BUCKET;
+                }else if(context.getInventory().getInventoryContents().get(i) instanceof Firetruck && itemLookingFor instanceof Firetruck){
+                    context.getInventory().getInventoryContents().remove(context.getInventory().getInventoryContents().get(i));
+                    return Message.FIRETRUCK;
+                }else if(context.getInventory().getInventoryContents().get(i) instanceof Wheelbarrow && itemLookingFor instanceof Wheelbarrow){
+                    context.getInventory().getInventoryContents().remove(context.getInventory().getInventoryContents().get(i));
+                    return Message.WHEELBARROW;
+                }
             }
-
-        } catch (Exception e) {
-            System.out.println("Not a valid input");
-            // System.out.println(e);
+            return Message.COMMAND_ERROR;
         }
-        return "dropSuccess";
-
     }
-
-}*/
+}

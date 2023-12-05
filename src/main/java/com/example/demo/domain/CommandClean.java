@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CommandClean implements Command{
     @Override
-    public Message execute(Context context, String Parameters[]) {
+    public Message execute(Context context, Message Parameters[]) {
         ArrayList<Item> inventory = context.getInventory().getInventoryContents();
         if(inventory.size()==0){
             return Message.NO_ITEMS;

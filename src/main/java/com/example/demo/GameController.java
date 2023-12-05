@@ -35,16 +35,24 @@ public class GameController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        
         ArrayList<Item> items = context.getInventory().getInventoryContents();
         for (int i = 0;i<items.size();i++){
             inventory.getItems().add(items.get(i));
         }
+
         responseMsg.put(Message.NO_ITEMS,"You have no items in your inventory. Consider going to the shop.");
         responseMsg.put(Message.NO_WATER,"There's no water in this cave.");
         responseMsg.put(Message.WRONG_LOCATION,"Wrong location.");
         responseMsg.put(Message.GAME_COMPLETED,"gameCompleted");
         responseMsg.put(Message.GONE_BAD,"You poured dirty water into the resivour!");
         responseMsg.put(Message.DROP_SUCCESS,"Successfully dropped item");
+        responseMsg.put(Message.BUCKET,"You dropped your a bucket.");
+        responseMsg.put(Message.FIRETRUCK,"You dropped your a firetruck.");
+        responseMsg.put(Message.WHEELBARROW,"You dropped your a wheelbarrow.");
+        responseMsg.put(Message.HANDS,"Hands aren't droppable.");
+        responseMsg.put(Message.NO_ITEMS_SELECTED,"No items selected.");
+        responseMsg.put(Message.COMMAND_ERROR, "Something went wrong.");
 
         reloadPoints();
         reloadWaterCount();
@@ -177,7 +185,21 @@ public class GameController implements Initializable{
     @FXML
     public void drop(ActionEvent event){
         try {
-            Message response = Main.commandExecute("drop", null);
+            Message response;
+            Item itemSelected = inventory.getSelectionModel().getSelectedItem();
+            if(itemSelected instanceof Firetruck){
+                response = Main.commandExecute("drop", (new Message[]{Message.FIRETRUCK}));
+            }else if(itemSelected instanceof Wheelbarrow){
+                response = Main.commandExecute("drop", (new Message[]{Message.WHEELBARROW}));
+            }else if(itemSelected instanceof Bucket){
+                response = Main.commandExecute("drop", (new Message[]{Message.BUCKET}));
+            }else if(itemSelected instanceof Hands){
+                response = Main.commandExecute("drop", (new Message[]{Message.HANDS}));
+            }else if(itemSelected == null){
+                response = Message.NO_ITEMS_SELECTED;
+            }else{
+                response = Message.COMMAND_ERROR;
+            }
             interpreter(response);
             updateInventory(event);
         } catch (Exception e) {

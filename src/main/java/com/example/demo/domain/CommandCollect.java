@@ -3,7 +3,7 @@ package com.example.demo.domain;
 import java.util.ArrayList;
 public class CommandCollect implements Command{
 
-    public Message execute(Context context,String parameters[]){
+    public Message execute(Context context,Message parameters[]){
         ArrayList<Item> inventory = context.getInventory().getInventoryContents();
         if(context.getCurrent().getWaterAmount()<=0){
             return Message.NO_WATER;
