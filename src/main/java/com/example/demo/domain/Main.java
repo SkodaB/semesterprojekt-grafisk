@@ -13,6 +13,7 @@ public class Main {
         registry.register("collect", new CommandCollect());
         registry.register("clean", new CommandClean());
         registry.register("pour", new CommandPour());
+        registry.register("drop", new CommandDrop());
     }
 
     public static Context getContext(){

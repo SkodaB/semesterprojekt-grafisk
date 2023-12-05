@@ -44,6 +44,7 @@ public class GameController implements Initializable{
         responseMsg.put("wrongLocationn","Wrong location.");
         responseMsg.put("gameCompleted","gameCompleted");
         responseMsg.put("waterGoneBad","You poured dirty water into the resivour!");
+        responseMsg.put("dropSuccess","Successfully dropped item");
 
         reloadPoints();
         reloadWaterCount();
@@ -168,6 +169,17 @@ public class GameController implements Initializable{
                 interpreter(response);
                 updateInventory(event);
             }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void drop(ActionEvent event){
+        try {
+            String response = Main.commandExecute("drop", null);
+            interpreter(response);
+            updateInventory(event);
         } catch (Exception e) {
             System.out.println(e);
         }
