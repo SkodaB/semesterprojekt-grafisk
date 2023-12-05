@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class CommandPour implements Command{
 
     @Override
-    public String execute(Context context, String parameters[]){
+    public Message execute(Context context, String parameters[]){
 
         boolean waterGoneBad = false;
         boolean gameCompleted = false;
@@ -13,7 +13,7 @@ public class CommandPour implements Command{
         ArrayList<Item> inventory = context.getInventory().getInventoryContents();
         double amount = 0;
             if(inventory.size()==0){
-                return "noItems";
+                return Message.NO_ITEMS;
             }
             for(int i = 0;i<inventory.size();i++){
                 if(inventory.get(i).getProgress()[0]==true&&inventory.get(i).getProgress()[1]==true&&inventory.get(i).getProgress()[2]==true&&inventory.get(i).getProgress()[3]==true){
@@ -33,11 +33,11 @@ public class CommandPour implements Command{
                 }
             }
             if (waterGoneBad == true){
-                return "waterGoneBad";
+                return Message.GONE_BAD;
             }else if(gameCompleted == true){
-                return "gameCompleted";
+                return Message.GAME_COMPLETED;
             }
-            return "pourSuccess";
+            return null;
     }
 
 }

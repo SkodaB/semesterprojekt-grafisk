@@ -13,7 +13,7 @@ public class Main {
         registry.register("collect", new CommandCollect());
         registry.register("clean", new CommandClean());
         registry.register("pour", new CommandPour());
-        registry.register("drop", new CommandDrop());
+        //registry.register("drop", new CommandDrop());
     }
 
     public static Context getContext(){
@@ -30,9 +30,9 @@ public class Main {
     public static boolean collect(){
          return true;
     }
-    public static String commandExecute(String name,String parameters[]){
+    public static Message commandExecute(String name,String parameters[]){
         if(registry.getCommand(name)==null){
-            return "commandError";
+            return Message.COMMAND_ERROR;
         }else{
             return registry.getCommand(name).execute(context, parameters);
         }

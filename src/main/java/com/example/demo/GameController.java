@@ -26,7 +26,7 @@ import java.util.HashMap;
 
 public class GameController implements Initializable{
 
-    static Map<String,String> responseMsg = new HashMap<>();
+    static Map<Message,String> responseMsg = new HashMap<>();
 
 
 
@@ -39,12 +39,12 @@ public class GameController implements Initializable{
         for (int i = 0;i<items.size();i++){
             inventory.getItems().add(items.get(i));
         }
-        responseMsg.put("noItems","You have no items in your inventory. Consider going to the shop.");
-        responseMsg.put("noWaterInCave","There's no water in this cave.");
-        responseMsg.put("wrongLocationn","Wrong location.");
-        responseMsg.put("gameCompleted","gameCompleted");
-        responseMsg.put("waterGoneBad","You poured dirty water into the resivour!");
-        responseMsg.put("dropSuccess","Successfully dropped item");
+        responseMsg.put(Message.NO_ITEMS,"You have no items in your inventory. Consider going to the shop.");
+        responseMsg.put(Message.NO_WATER,"There's no water in this cave.");
+        responseMsg.put(Message.WRONG_LOCATION,"Wrong location.");
+        responseMsg.put(Message.GAME_COMPLETED,"gameCompleted");
+        responseMsg.put(Message.GONE_BAD,"You poured dirty water into the resivour!");
+        responseMsg.put(Message.DROP_SUCCESS,"Successfully dropped item");
 
         reloadPoints();
         reloadWaterCount();
@@ -107,7 +107,7 @@ public class GameController implements Initializable{
         
     }
 
-    public void interpreter(String response){
+    public void interpreter(Message response){
         alerter(responseMsg.get(response));
     }
 
@@ -141,7 +141,7 @@ public class GameController implements Initializable{
     @FXML
     public void collect(ActionEvent event){
         try{
-            String response = Main.commandExecute("collect", null);
+            Message response = Main.commandExecute("collect", null);
             interpreter(response);
             updateInventory(event);
         }catch(Exception e){
@@ -152,7 +152,7 @@ public class GameController implements Initializable{
     @FXML
     public void filter(ActionEvent event){
         try {
-            String response = Main.commandExecute("clean", null);
+            Message response = Main.commandExecute("clean", null);
             interpreter(response);
             updateInventory(event);
         } catch (Exception e) {
@@ -162,8 +162,8 @@ public class GameController implements Initializable{
     @FXML
     public void pour(ActionEvent event){
         try {
-            String response = Main.commandExecute("pour", null);
-            if(response.equals("gameCompleted")){
+            Message response = Main.commandExecute("pour", null);
+            if(response == Message.GAME_COMPLETED){
                 endGame();
             }else{
                 interpreter(response);
@@ -177,7 +177,7 @@ public class GameController implements Initializable{
     @FXML
     public void drop(ActionEvent event){
         try {
-            String response = Main.commandExecute("drop", null);
+            Message response = Main.commandExecute("drop", null);
             interpreter(response);
             updateInventory(event);
         } catch (Exception e) {

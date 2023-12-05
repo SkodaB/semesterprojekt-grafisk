@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+/*package com.example.demo.domain;
 
 import java.util.Scanner;
 
@@ -50,4 +50,4 @@ public class CommandDrop implements Command {
 
     }
 
-}
+}*/
