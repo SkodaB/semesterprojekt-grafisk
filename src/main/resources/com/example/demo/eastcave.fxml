@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
@@ -38,5 +39,15 @@
       <Label layoutX="687.0" layoutY="156.0" prefHeight="17.0" prefWidth="38.0" text="Fine" />
       <Label layoutX="687.0" layoutY="183.0" prefHeight="17.0" prefWidth="27.0" text="Coal" />
       <Circle fill="#ff1f1f" layoutX="710.0" layoutY="29.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="526.0" layoutY="350.0" text="Water:" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="waterCount" layoutX="531.0" layoutY="363.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

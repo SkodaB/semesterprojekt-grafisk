@@ -46,11 +46,15 @@ public class GameController implements Initializable{
         responseMsg.put("waterGoneBad","You poured dirty water into the resivour!");
 
         reloadPoints();
+        reloadWaterCount();
 
 
     }
 
     Context context = Main.getContext();
+
+    @FXML
+    private Label waterCount;
 
     @FXML
     private Label welcomeText;
@@ -122,6 +126,7 @@ public class GameController implements Initializable{
     public void updateInventory(ActionEvent event){
         try{
             reloadPoints();
+            reloadWaterCount();
             ArrayList<Item> items = Main.getContext().getInventory().getInventoryContents();
             inventory.getItems().clear();
             for(int i = 0;i<items.size();i++){
@@ -388,5 +393,8 @@ public class GameController implements Initializable{
         }
 
     }
-
+    
+    public void reloadWaterCount(){
+        waterCount.setText(""+Main.getContext().getCurrent().getWaterAmount());
+    }
 }

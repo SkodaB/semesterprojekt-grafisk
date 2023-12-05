@@ -19,7 +19,7 @@ public class CommandPour implements Command{
                 if(inventory.get(i).getProgress()[0]==true&&inventory.get(i).getProgress()[1]==true&&inventory.get(i).getProgress()[2]==true&&inventory.get(i).getProgress()[3]==true){
                     amount = inventory.get(i).getCapacity();
                     area.addWater(amount);
-                    if(area.getWaterAmount()>=300){
+                    if(area.getWaterAmount()>=1000){
                         context.setDone(true);
                         gameCompleted = true;
                     }

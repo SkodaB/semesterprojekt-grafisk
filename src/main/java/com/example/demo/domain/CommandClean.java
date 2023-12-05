@@ -11,27 +11,27 @@ public class CommandClean implements Command{
         }
         if (context.getCurrent().name == "Rough filter") {
                 for (int i = 0; i < inventory.size(); i++) {
-                    if (inventory.get(i).getProgress()[0] == true) {
+                    if (inventory.get(i).getProgress()[0] == true && inventory.get(i).getProgress()[1]==false) {
                         inventory.get(i).setProgress(true, true, false, false);
-                        context.getPlayer().addPoints(10);
+                        context.getPlayer().addPoints((inventory.get(i).getCapacity()*0.05));
                     }
                 }
                 return "filterSuccess";
         }
         else if (context.getCurrent().name == "Fine filtering") {
             for (int i = 0;i<inventory.size();i++){
-                if(inventory.get(i).getProgress()[0]==true && inventory.get(i).getProgress()[1]==true){
+                if(inventory.get(i).getProgress()[0]==true && inventory.get(i).getProgress()[1]==true && inventory.get(i).getProgress()[2]==false){
                     inventory.get(i).setProgress(true, true, true, false);
-                    context.getPlayer().addPoints(10);
+                    context.getPlayer().addPoints((inventory.get(i).getCapacity()*0.05));
                 }
             }
             return "filterSuccess";
         } else if (context.getCurrent().name == "Active Coal Filter") {
             for (int i = 0;i<inventory.size();i++){
-                if(inventory.get(i).getProgress()[0]==true && inventory.get(i).getProgress()[1]==true && inventory.get(i).getProgress()[2]==true){
+                if(inventory.get(i).getProgress()[0]==true && inventory.get(i).getProgress()[1]==true && inventory.get(i).getProgress()[2]==true && inventory.get(i).getProgress()[3]==false){
                     
                     inventory.get(i).setProgress(true, true, true, true);
-                    context.getPlayer().addPoints(10);
+                    context.getPlayer().addPoints((inventory.get(i).getCapacity()*0.05));
                 }
             }
             return "filterSuccess";
@@ -40,5 +40,6 @@ public class CommandClean implements Command{
 
         }
     }
+
 }
 

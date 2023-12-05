@@ -28,7 +28,7 @@ public class Context {
     shop.addItem(new Firetruck());
     shop.addItem(new Firetruck());
 
-    player.addPoints(10000);
+    player.addPoints(10);
 
   }
 

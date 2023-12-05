@@ -11,8 +11,9 @@ public class CommandCollect implements Command{
             return "noItems";
         }else{
             for (int i = 0;i<inventory.size();i++){
-                if(inventory.get(i).getProgress()[0]==false){
+                if(inventory.get(i).getProgress()[0]==false && (context.getCurrent().getWaterAmount()-inventory.get(i).getCapacity())>=0){
                     inventory.get(i).setProgress(true, false, false, false);
+                    context.getCurrent().removeWater(inventory.get(i).getCapacity());
                 }
             }
             return "successCollect";

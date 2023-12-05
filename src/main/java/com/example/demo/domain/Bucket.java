@@ -3,7 +3,7 @@ package com.example.demo.domain;
 public class Bucket extends Item{
     
     Bucket(){
-        super("Bucket",10,10);
+        super("Bucket",70,10);
     }
 
 }
