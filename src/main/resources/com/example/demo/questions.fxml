@@ -2,13 +2,17 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <RadioButton fx:id="rb1" layoutX="73.0" layoutY="163.0" mnemonicParsing="false" text="1) Yes" />
-      <RadioButton fx:id="rb2" layoutX="73.0" layoutY="234.0" mnemonicParsing="false" text="2) No" />
+      <RadioButton fx:id="rb1" layoutX="73.0" layoutY="163.0" mnemonicParsing="false" text="1) Avoid pouring chemicals into the sink.">
+         <toggleGroup>
+            <ToggleGroup fx:id="choice" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rb2" layoutX="73.0" layoutY="234.0" mnemonicParsing="false" text="2) Put chemicals into the sink" toggleGroup="$choice" />
       <Label layoutX="229.0" layoutY="14.0" text="Question">
          <font>
             <Font name="Britannic Bold" size="29.0" />
