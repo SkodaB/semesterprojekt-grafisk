@@ -6,17 +6,23 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.application.Platform;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.EventObject;
@@ -430,5 +436,26 @@ public class GameController implements Initializable{
     
     public void reloadWaterCount(){
         waterCount.setText(""+Main.getContext().getCurrent().getWaterAmount());
+    }
+
+    // Switch to questions
+    private Stage stage;
+    private Parent root;
+    private Scene scene;
+    public void questionPopup(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("questions.fxml"));
+        root = loader.load();
+
+        QuestionController questionController = loader.getController();
+        //We can now call all methods from my questionController.
+        questionController.showQuestions();
+
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }
