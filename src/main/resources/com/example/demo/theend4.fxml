@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
       <Button layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#moveNorth" opacity="0.0" text="North" />
       <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveEast" opacity="0.0" text="East" />
@@ -18,8 +14,8 @@
       <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#moveSouth" opacity="0.0" text="South" />
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#pour" opacity="0.0" text="Pour water" />
       <Label fx:id="Points" layoutX="18.0" layoutY="337.0" opacity="0.0" prefHeight="17.0" prefWidth="166.0" text="Points" />
-      <ListView fx:id="inventory" layoutX="200.0" layoutY="418.0" opacity="0.0" prefHeight="161.0" prefWidth="400.0" />
-      <Label layoutX="210.0" layoutY="400.0" prefHeight="17.0" prefWidth="64.0" text="Inventory" />
+      <ListView fx:id="inventory" layoutX="200.0" layoutY="400.0" opacity="0.0" prefHeight="161.0" prefWidth="400.0" />
+      <Label layoutX="137.0" layoutY="411.0" opacity="0.0" text="Inventory" />
       <ImageView fitHeight="277.0" fitWidth="138.0" layoutX="600.0" layoutY="6.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Placering.png" />
@@ -35,14 +31,13 @@
       <Label layoutX="687.0" layoutY="156.0" opacity="0.0" prefHeight="17.0" prefWidth="38.0" text="Fine" />
       <Label layoutX="687.0" layoutY="183.0" opacity="0.0" prefHeight="17.0" prefWidth="27.0" text="Coal" />
       <Circle fill="#ff1f1f" layoutX="708.0" layoutY="100.0" opacity="0.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-      <Text layoutX="255.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game over!">
+      <Text layoutX="150.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Finishing Questions">
          <font>
             <Font size="45.0" />
          </font>
       </Text>
       <Text layoutX="322.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your score was:" />
       <Label fx:id="endScore" layoutX="355.0" layoutY="123.0" text="0" />
-      <Button layoutX="656.0" layoutY="532.0" mnemonicParsing="false" onAction="#endGame" prefHeight="12.0" prefWidth="82.0" text="END GAME" />
       <Label layoutX="526.0" layoutY="350.0" opacity="0.0" text="Water:" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -53,37 +48,35 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ImageView fx:id="waterView0" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
-      <ImageView fx:id="waterView1" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
-      <ImageView fx:id="waterView2" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
-      <ImageView fx:id="waterView3" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
       <Button layoutX="70.0" layoutY="387.0" mnemonicParsing="false" onAction="#wrongChoice" text="2)" />
-      <Button layoutX="70.0" layoutY="290.0" mnemonicParsing="false" onAction="#rightChoice" text="1)" />
-      <Label layoutX="101.0" layoutY="294.0" text="Avoid pouring chemicals into the sink.">
+      <Button layoutX="70.0" layoutY="290.0" mnemonicParsing="false" onAction="#rightChoice4" text="1)" />
+      <Label layoutX="101.0" layoutY="294.0" text="To improve water quality by reducing pollution, ">
          <font>
             <Font name="Arial Nova Cond Light" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="391.0" text="Put chemicals into the sink.">
+      <Label layoutX="104.0" layoutY="391.0" text="Building higher and better raw resource factories, therefore doubling the global pollution each year">
          <font>
             <Font name="Arial Nova Cond Light" size="12.0" />
          </font>
       </Label>
       <Label layoutX="67.0" layoutY="147.0" text="Before exiting the game please, lets check to see if you have learn anything from this game." />
       <Label layoutX="67.0" layoutY="164.0" text="Please answer the following question by answering what you think is the correct choice:" />
-      <Label layoutX="68.0" layoutY="224.0" text="What do you think is good behaviour, that will help to contribute to the achievement of ">
+      <Label layoutX="307.0" layoutY="249.0" text="What is SDG 6.3 about?">
          <font>
             <Font name="Arial Narrow" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="67.0" layoutY="241.0" text="UNs Goal 6, with focus on the sub-goal 6.6 and 6.3?">
+      <Label layoutX="101.0" layoutY="306.0" text="eliminating dumping and minimizing release of hazardous chemicals and materials,">
          <font>
             <Font name="Arial Nova Cond Light" size="12.0" />
          </font>
       </Label>
+      <Label layoutX="101.0" layoutY="320.0" text="halving the proportion of untreated wastewater and substantially increasing recycling and safe reuse globally">
+         <font>
+            <Font name="Arial Nova Cond Light" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="104.0" layoutY="408.0" text="Therefor reducing the amount of clean water, we have and can use" />
    </children>
 </AnchorPane>
