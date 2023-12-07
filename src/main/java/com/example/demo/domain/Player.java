@@ -37,7 +37,10 @@ public class Player {
         this.water = 0;
     }
 
+
     public double getPoints(){
+        long rounded = Math.round(points*100);
+        float points =rounded/100;
         return points;
     }
 

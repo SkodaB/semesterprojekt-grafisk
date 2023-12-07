@@ -7,8 +7,10 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.Cursor?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
+      <Rectangle height="525.0" layoutX="198.0" stroke="BLACK" strokeType="INSIDE" width="404.0" />
+      <Rectangle fill="WHITE" height="58.0" layoutX="199.1" layoutY="392.0" stroke="BLACK" strokeType="INSIDE" width="401.6" />
       <ImageView fitHeight="400.0" fitWidth="423.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
          <image>
             <Image url="@South-Cave.png" />
@@ -33,8 +35,8 @@
 
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#collect" text="Collect" />
       <Label fx:id="Points" layoutX="18.0" layoutY="337.0" prefHeight="17.0" prefWidth="166.0" text="Points" />
-      <ListView fx:id="inventory" layoutX="200.0" layoutY="400.0" prefHeight="161.0" prefWidth="400.0" />
-      <Label layoutX="137.0" layoutY="411.0" text="Inventory" />
+      <ListView fx:id="inventory" layoutX="200.0" layoutY="418.0" prefHeight="161.0" prefWidth="400.0" />
+      <Label layoutX="210.0" layoutY="400.0" prefHeight="17.0" prefWidth="64.0" text="Inventory" />
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onAction="#collect" text="Collect" />
       <ImageView fitHeight="277.0" fitWidth="138.0" layoutX="600.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -74,13 +76,13 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ImageView>
-      <ImageView fx:id="waterView0" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="waterView0" fitHeight="25.0" fitWidth="25.0" layoutX="567.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-      <ImageView fx:id="waterView1" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="waterView1" fitHeight="25.0" fitWidth="25.0" layoutX="567.0" layoutY="442.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-      <ImageView fx:id="waterView2" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="waterView2" fitHeight="25.0" fitWidth="25.0" layoutX="567.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
-      <ImageView fx:id="waterView3" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="waterView3" fitHeight="25.0" fitWidth="25.0" layoutX="567.0" layoutY="492.0" pickOnBounds="true" preserveRatio="true">
       </ImageView>
    </children>
 </AnchorPane>

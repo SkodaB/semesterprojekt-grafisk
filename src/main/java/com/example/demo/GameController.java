@@ -418,7 +418,7 @@ public class GameController implements Initializable{
         }
     }
 
-    private boolean clicked = true;
+    private boolean clickedShop = true;
 
 
     @FXML
@@ -427,16 +427,16 @@ public class GameController implements Initializable{
             if (!Main.getContext().getShop().shopHasItem()){
                 shopWarning.setVisible(true);
             }
-            else if (clicked && Main.getContext().getShop().shopHasItem()) {
+            else if (clickedShop && Main.getContext().getShop().shopHasItem()) {
                 openShop.setText("Close Shop");
                 shop.setVisible(true);
                 realodShop();
-                clicked =false;
+                clickedShop =false;
             } else {
                 openShop.setText("Open Shop");
                 shop.setVisible(false);
                 shopWarning.setVisible(false);
-                clicked = true;
+                clickedShop = true;
             }
         }catch (Exception e) {
             System.out.println(e);
@@ -529,5 +529,32 @@ public class GameController implements Initializable{
         }catch(Exception e){
             System.out.println(e);
         }
+    }
+
+
+
+
+
+    @FXML
+    private Pane tutorial;
+    @FXML
+    private Label tutorialtextGUI;
+    private int i = 0;
+    private String[] helpText = {"Hi and welcome to the World of water, my name is Bob.", "You "};
+
+    public void help(){
+        i = 0;
+        tutorialtextGUI.setText(helpText[i]);
+        i++;
+        tutorial.setVisible(true);
+    }
+    public void next(){
+        if (i != helpText.length){
+            tutorialtextGUI.setText(helpText[i]);
+            i++;
+        }else {
+            tutorial.setVisible(false);
+        }
+
     }
 }
