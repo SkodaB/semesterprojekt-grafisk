@@ -21,7 +21,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.application.Platform;
 import javafx.scene.control.RadioButton;
-
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -63,11 +64,23 @@ public class GameController implements Initializable{
 
         reloadPoints();
         reloadWaterCount();
-
+        reloadInventoryGraphics();
 
     }
 
     Context context = Main.getContext();
+
+    @FXML
+    private ImageView waterView0;
+
+    @FXML
+    private ImageView waterView1;
+
+    @FXML
+    private ImageView waterView2;
+
+    @FXML
+    private ImageView waterView3;
 
     @FXML
     private Label waterCount;
@@ -129,9 +142,70 @@ public class GameController implements Initializable{
         }
     }
 
+    public void reloadInventoryGraphics(){
+        ArrayList<Item> items = Main.getContext().getInventory().getInventoryContents();
+        if(items.size()==0){
+            return;
+        }
+        for (int i = 0;i<items.size();i++){
+            ImageView iv = waterView0;
+            String newImageURL = "";
+            Image newImage;
+            switch(i){
+                case 0:
+                    iv = waterView0;
+                    break;
+                case 1:
+                    iv = waterView1;
+                    break;
+                case 2:
+                    iv = waterView2;
+                    break;
+                case 3:
+                    iv = waterView3;
+                    break;
+                default:
+                    System.out.println("dev: inventory exceeds 4 items, change if needed");
+                    break;
+            }
+            if(items.get(i).getName()=="Hands"){
+                if(items.get(i).getProgress()[0]==true){
+                    newImageURL = "FullHands.png";
+                }else{
+                    newImageURL = "EmptyHands.png";
+                }
+            }else if(items.get(i).getName()=="Bucket"){
+                if(items.get(i).getProgress()[0]==true){
+                    newImageURL = "Bucket.png";
+                }else{
+                    newImageURL = "EmptyBucket.png";
+                }
+            }else if(items.get(i).getName()=="Wheelbarrow"){
+                if(items.get(i).getProgress()[0]==true){
+                    newImageURL = "FullWheelBarrow.png";
+                }else{
+                    newImageURL = "Wheelbarrow .png";
+                }
+            }else if(items.get(i).getName()=="Firetruck"){
+                if(items.get(i).getProgress()[0]==true){
+                    newImageURL = "FullFiretruck.png";
+                }else{
+                    newImageURL = "Firetruck.png";
+                }
+            }
+            try {
+                newImage = new Image(getClass().getResource(newImageURL).toExternalForm());
+                iv.setImage(newImage);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @FXML
     public void updateInventory(ActionEvent event){
         try{
+            reloadInventoryGraphics();
             reloadPoints();
             reloadWaterCount();
             ArrayList<Item> items = Main.getContext().getInventory().getInventoryContents();

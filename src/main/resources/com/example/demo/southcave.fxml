@@ -74,5 +74,13 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ImageView>
+      <ImageView fx:id="waterView0" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+      <ImageView fx:id="waterView1" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+      <ImageView fx:id="waterView2" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
+      <ImageView fx:id="waterView3" fitHeight="25.0" fitWidth="25.0" layoutX="601.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+      </ImageView>
    </children>
 </AnchorPane>
