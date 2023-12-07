@@ -9,6 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.Cursor?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="423.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
@@ -16,10 +17,23 @@
             <Image url="@RoughFilter.png" />
          </image>
       </ImageView>
-      <Button layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#moveNorth" text="North" />
-      <Button layoutX="124.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveEast" text="East" />
-      <Button layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveWest" text="West" />
-      <Button layoutX="72.0" layoutY="131.0" mnemonicParsing="false" onAction="#moveSouth" text="South" />
+      <Button focusTraversable="false" layoutX="85.0" layoutY="26.0" mnemonicParsing="false" onAction="#moveNorth" prefHeight="30.5" prefWidth="30.0" scaleX="0.95" scaleY="0.95" style="-fx-opacity: 1; -fx-border-color: black; -fx-border-radius: 3;" text="North" textFill="TRANSPARENT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button focusTraversable="false" layoutX="166.0" layoutY="104.0" mnemonicParsing="false" onAction="#moveEast" prefHeight="32.0" prefWidth="0.0" scaleX="0.95" scaleY="0.95" style="-fx-opacity: 1; -fx-border-color: black; -fx-border-radius: 3;" text="East" textFill="TRANSPARENT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button focusTraversable="false" layoutX="4.0" layoutY="104.0" mnemonicParsing="false" onAction="#moveWest" prefHeight="32.0" prefWidth="32.0" scaleX="0.95" scaleY="0.95" style="-fx-opacity: 1; -fx-border-color: black; -fx-border-radius: 3;" text="West" textFill="TRANSPARENT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button focusTraversable="false" layoutX="86.0" layoutY="185.0" mnemonicParsing="false" onAction="#moveSouth" prefHeight="32.0" prefWidth="30.0" scaleX="0.95" scaleY="0.95" style="-fx-opacity: 1; -fx-border-color: black; -fx-border-radius: 3;" text="South" textFill="TRANSPARENT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+
       <Button layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Filter" onAction="#filter" />
       <Label fx:id="Points" layoutX="18.0" layoutY="337.0" prefHeight="17.0" prefWidth="166.0" text="Points" />
       <ListView fx:id="inventory" layoutX="200.0" layoutY="400.0" prefHeight="161.0" prefWidth="400.0" />
@@ -49,5 +63,18 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
+      <ImageView disable="true" fitHeight="39.0" fitWidth="36.0" layoutX="5.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@W.png" />
+         </image>
+      </ImageView>
+      <ImageView disable="true" fitHeight="228.0" fitWidth="239.0" layoutX="-23.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" scaleX="0.95" scaleY="0.95">
+         <image>
+            <Image url="@Compass.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>
