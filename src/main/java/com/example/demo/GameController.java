@@ -53,7 +53,7 @@ public class GameController implements Initializable{
         responseMsg.put(Message.NO_WATER,"There's no water in this cave.");
         responseMsg.put(Message.WRONG_LOCATION,"Wrong location.");
         responseMsg.put(Message.GAME_COMPLETED,"gameCompleted");
-        responseMsg.put(Message.GONE_BAD,"You poured dirty water into the resivour!");
+        responseMsg.put(Message.GONE_BAD,"You poured dirty water into the reservoir. All the water went bad. You have to start over!");
         responseMsg.put(Message.DROP_SUCCESS,"Successfully dropped item");
         responseMsg.put(Message.BUCKET,"You dropped your a bucket.");
         responseMsg.put(Message.FIRETRUCK,"You dropped your a firetruck.");
