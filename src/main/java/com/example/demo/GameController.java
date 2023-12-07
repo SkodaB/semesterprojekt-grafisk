@@ -523,11 +523,64 @@ public class GameController implements Initializable{
             alert.close();
         }
     }
-    public void rightChoice (ActionEvent event){
+    public void rightChoice1(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Yay that is correct :)");
-        alert.setContentText("Exit the game by clicking 'OK'");
-        if (alert.showAndWait().get() == ButtonType.OK){
+        alert.setTitle("Yay that is correct! :)");
+        alert.setContentText("Head to the next question by clicking 'Ok'");
+
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            alert.close();
+
+            try {
+                GameApplication.loadScene("theend2.fxml");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public void rightChoice2(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Yay that is correct! :)");
+        alert.setContentText("Head to the next question by clicking 'Ok'");
+
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            alert.close();
+
+            try {
+                GameApplication.loadScene("theend3.fxml");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public void rightChoice3(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Yay that is correct! :)");
+        alert.setContentText("Head to the next question by clicking 'Ok'");
+
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            alert.close();
+
+            try {
+                GameApplication.loadScene("theend4.fxml");
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
+    public void rightChoice4(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Yay that is correct! :)");
+        alert.setContentText("Head to the next question by clicking 'Ok'");
+
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
             alert.close();
             Platform.exit();
         }
@@ -535,7 +588,7 @@ public class GameController implements Initializable{
 
     public void endGame(){
         try{
-            GameApplication.loadScene("theend.fxml");
+            GameApplication.loadScene("theend1.fxml");
         }catch(Exception e){
             System.out.println(e);
         }
