@@ -375,12 +375,13 @@ public class GameController implements Initializable{
             ActionEvent event = null;
 
             String buttonPressed = ((Button)e.getSource()).getId();
-            if (Main.getContext().getShop().checkHowMany(buttonPressed) == 0){
+            Items buttonPressedenum = Items.valueOf(buttonPressed);
+            if (Main.getContext().getShop().checkHowMany(buttonPressedenum) == 0){
                 shopWarning.setVisible(true);
                 shopWarningText. setText("There ar no more "+ buttonPressed.toLowerCase() + "'s left");
             }else {
                 shopWarning.setVisible(false);
-                if (Main.getContext().getShop().buyItem(buttonPressed)){
+                if (Main.getContext().getShop().buyItem(buttonPressedenum)){
                     realodShop();
                     reloadPoints();
                     updateInventory(event);
@@ -413,12 +414,12 @@ public class GameController implements Initializable{
                 shopWarningText. setText("The shop owner has no items left");
                 shop.setVisible(false);
             }else {
-                BucketQuantity.setText("Quantity: "+ Main.getContext().getShop().checkHowMany("Bucket"));
-                WheelbarrowQuantity.setText("Quantity: "+Main.getContext().getShop().checkHowMany("Wheelbarrow"));
-                FiretruckQuantity.setText("Quantity: "+Main.getContext().getShop().checkHowMany("Firetruck"));
-                BucketPrice.setText("Price: "+ Main.getContext().getShop().checkPrice("Bucket"));
-                WheelbarrowPrice.setText("Price: "+Main.getContext().getShop().checkPrice("Wheelbarrow"));
-                FiretruckPrice.setText("Price: "+Main.getContext().getShop().checkPrice("Firetruck"));
+                BucketQuantity.setText("Quantity: "+ Main.getContext().getShop().checkHowMany(Items.Bucket));
+                WheelbarrowQuantity.setText("Quantity: "+Main.getContext().getShop().checkHowMany(Items.Wheelbarrow));
+                FiretruckQuantity.setText("Quantity: "+Main.getContext().getShop().checkHowMany(Items.Firetruck));
+                BucketPrice.setText("Price: "+ Main.getContext().getShop().checkPrice(Items.Bucket));
+                WheelbarrowPrice.setText("Price: "+Main.getContext().getShop().checkPrice(Items.Wheelbarrow));
+                FiretruckPrice.setText("Price: "+Main.getContext().getShop().checkPrice(Items.Firetruck));
             }
         }catch (Exception e){
             System.out.println(e);

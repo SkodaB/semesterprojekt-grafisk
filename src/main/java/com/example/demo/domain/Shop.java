@@ -16,7 +16,8 @@ public class Shop {
         shopItems.add(item);
     }
 
-    public int checkHowMany(String itemLookingFor){
+    public int checkHowMany(Items itemName){
+        String itemLookingFor = itemName.name();
         int Items = 0;
             for (int j = 0; j < shopItems.size(); j++) {
                 if (Objects.equals(itemLookingFor, shopItems.get(j).getName())) {
@@ -25,7 +26,8 @@ public class Shop {
             }
         return Items;
     }
-    public double checkPrice(String itemLookingFor){
+    public double checkPrice(Items itemname){
+        String itemLookingFor = itemname.name();
         for (int i = 0; i < shopItems.size(); i++) {
             if (Objects.equals(itemLookingFor, shopItems.get(i).getName())) {
                 return shopItems.get(i).getPrice();
@@ -34,7 +36,8 @@ public class Shop {
         return 0;
     }
 
-    public void removeItem(String itemName){
+    public void removeItem(Items itemWantingToRemove){
+        String itemName = itemWantingToRemove.name();
         for (int i = 0; i < shopItems.size(); i++) {
             if (Objects.equals(itemName, shopItems.get(i).getName())) {
                 shopItems.remove(i);
@@ -43,11 +46,12 @@ public class Shop {
         }
     }
 
-    public boolean buyItem(String itemName){
+    public boolean buyItem(Items itemWantingTobuy){
+        String itemName = itemWantingTobuy.name();
         double balance = Main.getContext().getPlayer().getPoints();
-        if(Main.getContext().getShop().checkHowMany(itemName)==0){
+        if(Main.getContext().getShop().checkHowMany(itemWantingTobuy)==0){
             return false;
-        }else if(Main.getContext().getShop().checkPrice(itemName)>balance){
+        }else if(Main.getContext().getShop().checkPrice(itemWantingTobuy)>balance){
             return false;
         }else{
             for (int i = 0; i < Main.getContext().getShop().shopItems.size(); i++) {
@@ -55,9 +59,9 @@ public class Shop {
                     if(Main.getContext().getInventory().getInventoryContents().size()==Main.getContext().getInventory().getMaxCapacity()){
                         return false;
                     }
-                    Main.getContext().getPlayer().subtractPoints(Main.getContext().getShop().checkPrice(itemName));
+                    Main.getContext().getPlayer().subtractPoints(Main.getContext().getShop().checkPrice(itemWantingTobuy));
                     Main.getContext().getInventory().addItem(Main.getContext().getShop().shopItems.get(i));
-                    Main.getContext().getShop().removeItem(itemName);
+                    Main.getContext().getShop().removeItem(itemWantingTobuy);
                     break;
                 }
             }
