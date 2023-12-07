@@ -17,10 +17,6 @@ public class GameApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         theStage = stage;
-        //FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource("hello-view.fxml"));
-        //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        //stage.setTitle("World Of water!");
-        //stage.setScene(scene);
         loadScene(Main.game()+".fxml");
     }
 
