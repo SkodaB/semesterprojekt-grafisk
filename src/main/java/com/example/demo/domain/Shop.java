@@ -52,6 +52,9 @@ public class Shop {
         }else{
             for (int i = 0; i < Main.getContext().getShop().shopItems.size(); i++) {
                 if (Objects.equals(itemName, Main.getContext().getShop().shopItems.get(i).getName())) {
+                    if(Main.getContext().getInventory().getInventoryContents().size()==Main.getContext().getInventory().getMaxCapacity()){
+                        return false;
+                    }
                     Main.getContext().getPlayer().subtractPoints(Main.getContext().getShop().checkPrice(itemName));
                     Main.getContext().getInventory().addItem(Main.getContext().getShop().shopItems.get(i));
                     Main.getContext().getShop().removeItem(itemName);

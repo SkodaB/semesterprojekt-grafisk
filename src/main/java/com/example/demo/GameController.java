@@ -386,7 +386,7 @@ public class GameController implements Initializable{
                     updateInventory(event);
                 }else {
                     shopWarning.setVisible(true);
-                    shopWarningText. setText("You don't have enough points");
+                    shopWarningText. setText("You don't have enough points or you have reached maximum inventory capacity of " + Main.getContext().getInventory().getMaxCapacity());
                 }
             }
         }catch (Exception n){

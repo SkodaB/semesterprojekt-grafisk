@@ -13,13 +13,13 @@ class World {
     this.spaceFxml.put(shop, "shop");
     Space water_reservoir = new Space("Water Reservoir", "here you can store clean water",0);
     this.spaceFxml.put(water_reservoir, "wr");
-    Space entry_cave = new Space("Entry cave", "here you can collect water",400);
+    Space entry_cave = new Space("Entry cave", "here you can collect water",1000);
     this.spaceFxml.put(entry_cave, "southcave");
-    Space west_cave = new Space("Western cave", "here you can collect water",400);
+    Space west_cave = new Space("Western cave", "here you can collect water",1000);
     this.spaceFxml.put(west_cave, "westcave");
-    Space east_cave = new Space("Eastern cave", "here you can collect water",400);
+    Space east_cave = new Space("Eastern cave", "here you can collect water",1000);
     this.spaceFxml.put(east_cave, "eastcave");
-    Space north_cave = new Space("Northern cave", "here you can collect water",400);
+    Space north_cave = new Space("Northern cave", "here you can collect water",1000);
     this.spaceFxml.put(north_cave, "northcave");
     Space rough_filter = new Space("Rough filter", "here you can filter water using the rough filter",0);
     this.spaceFxml.put(rough_filter, "roughfilter");

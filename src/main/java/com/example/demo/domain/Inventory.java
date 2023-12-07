@@ -48,6 +48,10 @@ public class Inventory {
         return false;
     }
 
+    public int getMaxCapacity(){
+        return maxCapacity;
+    }
+
     public ArrayList<Item> getInventoryContents(){
         return this.inventory;
     }

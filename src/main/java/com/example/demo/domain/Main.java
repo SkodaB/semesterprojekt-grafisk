@@ -3,7 +3,7 @@ package com.example.demo.domain;
 public class Main {
 
     static World world = new World();
-    static Inventory inventory = new Inventory(5);
+    static Inventory inventory = new Inventory(4);
     static Player player = new Player("name",0);
     static Shop shop = new Shop();
     static Context context = new Context(world.getEntry(),player,shop,inventory,world);

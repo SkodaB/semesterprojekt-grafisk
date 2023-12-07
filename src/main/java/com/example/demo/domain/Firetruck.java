@@ -3,7 +3,7 @@ package com.example.demo.domain;
 public class Firetruck extends Item{
     
     Firetruck(){
-        super("Firetruck",2000,500);
+        super("Firetruck",2000,50);
     }
 
 }
