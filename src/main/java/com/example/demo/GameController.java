@@ -431,9 +431,7 @@ public class GameController implements Initializable{
     }
 
     // Switch to questions
-    private Stage stage;
-    private Parent root;
-    private Scene scene;
+
     public void endGame(){
         try{
             GameApplication.loadScene("theend.fxml");
@@ -442,8 +440,11 @@ public class GameController implements Initializable{
         }
 
     }
-    public void questionPopup(ActionEvent event) throws IOException {
-            GameApplication.loadScene("questions.fxml");
+    public void questionPopup() throws IOException {
+            try{GameApplication.loadScene("questions.fxml");
+            }catch (Exception e){
+                System.out.println(e);
+            }
     }
     @FXML private Label qLabel;
     @FXML
