@@ -1,12 +1,31 @@
 package com.example.demo.domain;
 
 import java.util.Set;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Space extends Node {
 
+  static Random random = new Random();
+
+  private static ArrayList<String> info = new ArrayList<>();
 
   Space (String name, String description,int waterAmount) {
     super(name, description,waterAmount);
+  }
+
+  public static void addInfo(String information){
+    info.add(information);
+  }
+
+  public static String giveInfo(){
+    if(random.nextDouble()>0.75 && info.size()!=0){
+      String i = info.get(0);
+      info.remove(0);
+      return i;
+    }else{
+      return null;
+    }
   }
 
   public double removeWater(double amount){

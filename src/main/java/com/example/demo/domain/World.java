@@ -66,7 +66,12 @@ class World {
     //active coal filter exits
     active_coal_filter.addEdge("north", fine_filter);
     
-    
+    //add info
+    Space.addInfo("randominfo1");
+    Space.addInfo("randominfo2");
+    Space.addInfo("randominfo3");
+    Space.addInfo("randominfo4");
+
     this.entry = entry;
 
   }
