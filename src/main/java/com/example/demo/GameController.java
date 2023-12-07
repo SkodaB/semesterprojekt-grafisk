@@ -411,7 +411,7 @@ public class GameController implements Initializable{
     //En command til at sige du kan ikke gå den her vej
     public void wrongDirection (ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("HUR HUR HUR HUR");
+        alert.setTitle("Wrong direction :(");
         alert.setContentText("Click 'OK'");
         if (alert.showAndWait().get() == ButtonType.OK){
             alert.close();
@@ -505,7 +505,23 @@ public class GameController implements Initializable{
         waterCount.setText(""+Main.getContext().getCurrent().getWaterAmount());
     }
 
-    // Switch to questions
+    public void wrongChoice (ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Nope that is not correct :(");
+        alert.setContentText("Try again by clicking 'OK'");
+        if (alert.showAndWait().get() == ButtonType.OK){
+            alert.close();
+        }
+    }
+    public void rightChoice (ActionEvent event){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Yay that is correct :)");
+        alert.setContentText("Exit the game by clicking 'OK'");
+        if (alert.showAndWait().get() == ButtonType.OK){
+            alert.close();
+            Platform.exit();
+        }
+    }
 
     public void endGame(){
         try{
@@ -513,26 +529,5 @@ public class GameController implements Initializable{
         }catch(Exception e){
             System.out.println(e);
         }
-
-    }
-    public void questionPopup() throws IOException {
-            try{GameApplication.loadScene("questions.fxml");
-            }catch (Exception e){
-                System.out.println(e);
-            }
-    }
-    @FXML private Label qLabel;
-    @FXML
-    private RadioButton rb1, rb2;
-
-    public void showQuestions(){
-        qLabel.setText("What can you do to contribute to the achievement of UNs Goal 6,'\n' with focus on the sub-goal 6.6 and 6.3?");
-        if(rb1.isSelected()){
-            //viser om hvis det er rigtig eller ej
-        }
-        else if(rb2.isSelected()){
-            //viser om hvis det er rigtig eller ej
-        }
-
     }
 }
