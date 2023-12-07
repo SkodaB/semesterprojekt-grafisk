@@ -65,14 +65,14 @@
             <Font name="Arial Nova Cond Light" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="104.0" layoutY="148.0" text="Before exiting the game please, lets check to see if you have learn anything from this game." />
-      <Label layoutX="110.0" layoutY="174.0" text="Please answer the following question by answering you think is the correct choice:" />
-      <Label layoutX="110.0" layoutY="216.0" text="What do you think is good behaviour, that will help to contribute to the achievement of ">
+      <Label layoutX="67.0" layoutY="147.0" text="Before exiting the game please, lets check to see if you have learn anything from this game." />
+      <Label layoutX="67.0" layoutY="164.0" text="Please answer the following question by answering what you think is the correct choice:" />
+      <Label layoutX="68.0" layoutY="224.0" text="What do you think is good behaviour, that will help to contribute to the achievement of ">
          <font>
             <Font name="Arial Narrow" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="109.0" layoutY="233.0" text="UNs Goal 6, with focus on the sub-goal 6.6 and 6.3?">
+      <Label layoutX="67.0" layoutY="241.0" text="UNs Goal 6, with focus on the sub-goal 6.6 and 6.3?">
          <font>
             <Font name="Arial Nova Cond Light" size="12.0" />
          </font>
