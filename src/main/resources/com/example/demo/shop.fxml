@@ -178,12 +178,12 @@
             </ImageView>
          </children>
       </Pane>
-      <Label layoutX="526.0" layoutY="350.0" text="Water:" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="526.0" layoutY="350.0" text="Water:" textAlignment="CENTER" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="waterCount" layoutX="531.0" layoutY="363.0" text="0" textFill="WHITE">
+      <Label fx:id="waterCount" layoutX="531.0" layoutY="363.0" text="0" textFill="WHITE" visible="false">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
