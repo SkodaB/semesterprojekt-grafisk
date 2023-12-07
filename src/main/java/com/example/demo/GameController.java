@@ -603,7 +603,7 @@ public class GameController implements Initializable{
     @FXML
     private Label tutorialtextGUI;
     private int i = 0;
-    private String[] helpText = {"Hi and welcome to the World of water, my name is Bob.", "You "};
+    private String[] helpText = {"Hi and welcome to the World of water, my name is Bob.", "You must venture into the cave system, find dirty water and clean it!"};
 
     public void help(){
         i = 0;
