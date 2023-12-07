@@ -67,10 +67,10 @@ class World {
     active_coal_filter.addEdge("north", fine_filter);
     
     //add info
-    Space.addInfo("randominfo1");
-    Space.addInfo("randominfo2");
-    Space.addInfo("randominfo3");
-    Space.addInfo("randominfo4");
+    Space.addInfo("Achieving SDG 6.3 would contribute to the overall well-being of communities by ensuring access to clean water and reduce water-related diseases");
+    Space.addInfo("SDG 6.6 is about protecting/pestoring water-related ecosystems.");
+    Space.addInfo("SDG 6.3's goal is To improve water quality by reducing pollution, eliminating dumping and minimizing release of hazardous chemicals and materials");
+  
 
     this.entry = entry;
 
