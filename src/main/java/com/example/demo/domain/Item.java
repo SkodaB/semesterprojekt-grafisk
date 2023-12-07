@@ -33,7 +33,19 @@ public abstract class Item {
 
     @Override
     public String toString(){
-        return name + " - Full: " + progress[0] +" RoughF: "+ progress[1] + " FineF: "+progress[2] + " CoalF: "+ progress[3];
+        String cf = "";
+        String rf = "";
+        String ff = "";
+        if(progress[1]){
+            rf = ": Is rough filtered. ";
+        }
+        if(progress[2]){
+            ff = " Is fine filtered. ";
+        }
+        if(progress[3]){
+            cf = " Is coal filtered. ";
+        }
+        return name + rf + ff + cf;
     }
 
     public double getCapacity(){

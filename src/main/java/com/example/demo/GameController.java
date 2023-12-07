@@ -65,6 +65,7 @@ public class GameController implements Initializable{
         reloadPoints();
         reloadWaterCount();
         reloadInventoryGraphics();
+        displayInfo(null);
 
     }
 
@@ -215,6 +216,15 @@ public class GameController implements Initializable{
             }
         }catch(Exception e){
             System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void displayInfo(ActionEvent event){
+        try {
+            alerter(Space.giveInfo());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
