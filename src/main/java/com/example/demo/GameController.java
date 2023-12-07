@@ -20,6 +20,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.application.Platform;
+import javafx.scene.control.RadioButton;
 
 
 import java.io.IOException;
@@ -110,15 +111,6 @@ public class GameController implements Initializable{
     @FXML
     public void endApp(){
         Platform.exit();
-    }
-
-    public void endGame(){
-        try{
-            GameApplication.loadScene("theend.fxml");
-        }catch(Exception e){
-            System.out.println(e);
-        }
-        
     }
 
     public void interpreter(Message response){
@@ -442,20 +434,29 @@ public class GameController implements Initializable{
     private Stage stage;
     private Parent root;
     private Scene scene;
+    public void endGame(){
+        try{
+            GameApplication.loadScene("theend.fxml");
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+    }
     public void questionPopup(ActionEvent event) throws IOException {
+            GameApplication.loadScene("questions.fxml");
+    }
+    @FXML private Label qLabel;
+    @FXML
+    private RadioButton rb1, rb2;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("questions.fxml"));
-        root = loader.load();
-
-        QuestionController questionController = loader.getController();
-        //We can now call all methods from my questionController.
-        questionController.showQuestions();
-
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void showQuestions(){
+        qLabel.setText("What can you do to contribute to the achievement of UNs Goal 6,'\n' with focus on the sub-goal 6.6 and 6.3?");
+        if(rb1.isSelected()){
+            //viser om hvis det er rigtig eller ej
+        }
+        else if(rb2.isSelected()){
+            //viser om hvis det er rigtig eller ej
+        }
 
     }
 }

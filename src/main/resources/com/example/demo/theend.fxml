@@ -10,7 +10,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
       <Button layoutX="71.0" layoutY="28.0" mnemonicParsing="false" onAction="#moveNorth" text="North" />
@@ -43,7 +42,7 @@
       </Text>
       <Text layoutX="329.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your score was:" />
       <Label fx:id="endScore" layoutX="356.0" layoutY="200.0" text="0" />
-      <Button layoutX="316.0" layoutY="283.0" mnemonicParsing="false" text="Click to close app" onAction="#endApp"/>
+      <Button layoutX="292.0" layoutY="280.0" mnemonicParsing="false" onAction="#questionPopup" text="Click to go to questions" />
       <Label layoutX="526.0" layoutY="350.0" text="Water:" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
